@@ -45,7 +45,7 @@ const Header = () => {
                             <div className={"shop-container"}>
                                 <span></span>
                                 <i className="fa-brands fa-shopify"></i>
-                                <Shop basket={basket} setBasket={() => setShow(false)}/>
+                                <Shop basket={basket} setBasket={setShow}/>
                             </div>
                         </section>
                         <section  className={"likes-products"}><i className="fa-regular fa-heart"></i></section>
