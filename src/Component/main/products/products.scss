@@ -15,11 +15,10 @@
       margin-top: 80px;
 
       .monitor {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         overflow: hidden;
+        @media (max-width: 619px) {
+          width: 100%;
+        }
       }
         img{
           transition: all ease 0.5s;
@@ -31,6 +30,9 @@
       }
       .head-seat {
           overflow: hidden;
+        @media (max-width: 619px) {
+          width: 100%;
+        }
         img{
           transition: all ease 0.5s;
         }
