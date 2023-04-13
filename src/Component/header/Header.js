@@ -1,14 +1,20 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import Shop from "../shop/Shop";
+import LikedProducts from "../likedProducts/LikedProducts";
 import "./header.scss"
 
 const Header = () => {
     const [isDisplay, setIsDisplay ] = useState(false)
+    const [isDisplay2, setIsDisplay2] = useState(false)
     const [basket, setBasket] = useState(false)
+
 
     const setShow = (item) => {
         setBasket(item)
+    }
+    const setLikesClose = (item) => {
+        setIsDisplay2(item)
     }
 
 
@@ -19,9 +25,7 @@ const Header = () => {
                 <section className={"nav-container container"}>
                     <nav>
                         <Link className={"logo"} to={"/"}>Technology <span>Shop</span></Link>
-                        {isDisplay ? <i className="fa-solid fa-x" onClick={() => setIsDisplay(false)}></i> :
-                            <i className="fa-solid fa-bars" onClick={() => setIsDisplay(true)}></i>}
-
+                        {isDisplay ? <i className="fa-solid fa-x" onClick={() => setIsDisplay(false)}></i> : <i className="fa-solid fa-bars" onClick={() => setIsDisplay(true)}></i>}
                         <ul className={isDisplay ? "list-navigation show" : "list-navigation"}>
                             <li>
                                 <a className={"link"} href={"about"}>About</a>
@@ -39,16 +43,19 @@ const Header = () => {
 
                     <section className={"interface"}>
                         <section className={"user"}>
-                            <i className="fa-regular fa-circle-user"></i>
+                            <i  className="fa-regular fa-circle-user"></i>
                         </section>
-                        <section onClick={() => setBasket(true)} className={"shop"}>
-                            <div className={"shop-container"}>
+                        <section  className={"shop"}>
+                            <div  className={"shop-container"}>
                                 <span></span>
-                                <i className="fa-brands fa-shopify"></i>
+                                <i onClick={() => setBasket(true)} className="fa-brands fa-shopify"></i>
                                 <Shop basket={basket} setBasket={setShow}/>
                             </div>
                         </section>
-                        <section  className={"likes-products"}><i className="fa-regular fa-heart"></i></section>
+                        <section   className={"likes-products"}>
+                            <i onClick={() => setIsDisplay2(true)} className="fa-regular fa-heart"></i>
+                            <LikedProducts isDisplay2={isDisplay2} setIsDisplay2={setLikesClose}/>
+                        </section>
                     </section>
                 </section>
 

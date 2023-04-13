@@ -1,0 +1,57 @@
+@import "src/Component/sass/_mixin.scss";
+
+.products {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  .products-container {
+
+    .categoryProducts {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: space-between;
+      margin-top: 80px;
+
+      .monitor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+        img{
+          transition: all ease 0.5s;
+        }
+        img:hover {
+          transform: scale(1.2);
+
+        }
+      }
+      .head-seat {
+          overflow: hidden;
+        img{
+          transition: all ease 0.5s;
+        }
+        img:hover {
+          transform: scale(1.2);
+        }
+      }
+      .phone {
+        overflow: hidden;
+        @media (max-width: 920px) {
+          width: 100%;
+        }
+       img{
+         transition: all ease 0.5s;
+       }
+        img:hover {
+          transform: scale(1.2);
+        }
+
+
+      }
+
+    }
+  }

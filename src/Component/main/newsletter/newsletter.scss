@@ -1,0 +1,79 @@
+.newsletter {
+     display: flex;
+   justify-content: center;
+    align-items: center;
+    width: 100%;
+   height: 400px;
+   background-image: url("../../assets/newsletter-bg.jpeg");
+   background-position: center;
+   background-size: cover;
+   margin-top: 100px;
+    .newsLetterContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+         .small-text {
+           color: rgba(0, 0, 0, 0.5);
+           margin-bottom: 15px;
+           text-transform: uppercase;
+           font-weight: bold;
+         }
+        .big-Text {
+          margin-bottom: 20px;
+          font-size: 22px;
+          line-height: 30px;
+          font-weight: 500;
+          text-transform: uppercase;
+          padding: 0 30px;
+        }
+        form {
+          display: flex;
+          gap: 5px;
+          input {
+            width: 100%;
+            height: 40px;
+            border-radius: 0;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 0 12px;
+            font-size: 16px;
+            outline: none;
+          }
+          button {
+            outline: 0;
+            border: 0;
+            height: 40px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            background: #8e2de2;
+            border-bottom: 3px solid #6516aa;
+          }
+        }
+        .privace {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.5);
+        }
+       .socialMediaContainer {
+         display: flex;
+         gap: 10px;
+          .icon {
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+          }
+       }
+    }
+}

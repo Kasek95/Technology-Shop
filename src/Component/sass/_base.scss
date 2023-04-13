@@ -13,4 +13,17 @@
      width: 100%;
    }
 }
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  background: radial-gradient(ellipse at center, rgba(87, 86, 86, 1.0), rgba(1, 1, 1, 1.0));
+  margin-bottom: 10px;
+}
+
+
+
+
 

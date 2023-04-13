@@ -1,0 +1,13 @@
+@mixin categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 160px;
+  border: 1px solid rgba(0,0, 0, 0.5);
+  font-size: 1.5rem;
+  color: rgba(0,0, 0, 0.5);
+  text-transform: uppercase;
+  transition: all ease 0.6s;
+}

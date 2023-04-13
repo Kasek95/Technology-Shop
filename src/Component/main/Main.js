@@ -1,5 +1,7 @@
 import React from "react";
 import Banner from "./welcomSection/Banner";
+import Products from "./products/Products";
+import NewsLetter from "./newsletter/NewsLetter";
 
 
 const Main =() => {
@@ -7,6 +9,8 @@ const Main =() => {
         <>
             <main>
                 <Banner/>
+                <Products/>
+                <NewsLetter/>
             </main>
         </>
     )
