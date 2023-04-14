@@ -8,34 +8,21 @@ import "./Component/sass/_mixin.scss"
 
 
 function App() {
+    const [products,setProducts] = useState([])
 
-    const [products, setProducts] = useState(null)
-    const [errors, setErros] = useState(null)
+    useEffect(() => {
+        getProducts();
+    }, []);
 
-
-        useEffect(()=> {
-             const fetchProducts =async () => {
-                 const {data,error} = await  supabase.from("products").select()
-                  if(error) {
-                      setErros("Cannot reach products")
-                      setProducts(null)
-                      console.log(error)
-                  }
-                  if(data){
-                      setProducts(data)
-                      setErros(null)
-                      console.log(data)
-                  }
-
-             }
-             fetchProducts()
-
-        },[])
+    async function getProducts() {
+        const { data } = await supabase.from("products").select();
+        setProducts(data);
+    }
 
 
-  return (
+    return (
         <>
-            <Header/>
+            <Header products={products} />
             <Main/>
             <Footer/>
         </>

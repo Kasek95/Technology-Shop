@@ -1,14 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Shop from "../shop/Shop";
 import LikedProducts from "../likedProducts/LikedProducts";
+import SearchBar from "./searchBarFilter/SearchBar";
 import "./header.scss"
+import supabase from "../../supabase";
 
-const Header = () => {
+const Header = ({products}) => {
     const [isDisplay, setIsDisplay ] = useState(false)
     const [isDisplay2, setIsDisplay2] = useState(false)
     const [basket, setBasket] = useState(false)
     const [searchProducts, setSearchProducts] = useState("")
+
+
 
     const setShow = (item) => {
         setBasket(item)
@@ -29,7 +33,7 @@ const Header = () => {
                         <ul className={isDisplay ? "list-navigation show" : "list-navigation"}>
                             <li>
                                 <a className={"link"} href={"#about"}>About</a>
-                                <Link className={"link"} to={"products"}>Products</Link>
+                                <Link className={"link"} to={"/products"}>Products</Link>
                             </li>
                         </ul>
                     </nav>
@@ -41,11 +45,12 @@ const Header = () => {
                                    placeholder={"Search Products"}/>
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </div>
+                        <SearchBar search={searchProducts} products={products}/>
                     </section>
 
                     <section className={"interface"}>
                         <section className={"user"}>
-                            <i className="fa-regular fa-circle-user"></i>
+                           <Link to={"/user"}> <i className="fa-regular fa-circle-user"></i></Link>
                         </section>
                         <section  className={"shop"}>
                             <div  className={"shop-container"}>

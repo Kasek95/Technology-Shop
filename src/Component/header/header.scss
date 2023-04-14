@@ -95,6 +95,7 @@ header {
          }
     }
     .findProducts {
+      position: relative;
        display: flex;
        justify-content: center;
        align-items: center;
@@ -105,17 +106,13 @@ header {
          position: absolute;
 
        }
-
-
-
-        .findProductsContainer {
+      .findProductsContainer {
           position: relative;
           display: flex;
           align-items: center;
           width: 300px;
            @media (max-width: 590px) {
              width: 100%;
-
            }
           input {
             outline: none;

@@ -1,0 +1,33 @@
+import "./searchBar.scss"
+import React, {useEffect, useState} from "react";
+import supabase from "../../../supabase";
+
+const SearchBar = ({search,products}) => {
+
+    if(!products) return null;
+    return (
+        <>
+
+                 <section className={"searchList"}>
+                     {
+                         products.filter((product) => {
+                             if(search == "") {
+                                 return product
+                             } else if(product.products_name.toLowerCase().includes(search.toLowerCase())){
+                                 return product;
+                             }
+                         }).map(product=>
+
+                             search === "" ? null : <div key={product.id} className={"list-item"}>{product.products_name}
+                                 <img src={product.products_img}/>
+                             </div>
+
+                         )
+                     }
+                 </section>
+
+        </>
+    )
+}
+
+export default SearchBar;
