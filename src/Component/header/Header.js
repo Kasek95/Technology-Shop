@@ -4,7 +4,7 @@ import Shop from "../shop/Shop";
 import LikedProducts from "../likedProducts/LikedProducts";
 import SearchBar from "./searchBarFilter/SearchBar";
 import "./header.scss"
-import supabase from "../../supabase";
+
 
 const Header = ({products}) => {
     const [isDisplay, setIsDisplay ] = useState(false)
@@ -32,8 +32,8 @@ const Header = ({products}) => {
                         {isDisplay ? <i className="fa-solid fa-x" onClick={() => setIsDisplay(false)}></i> : <i className="fa-solid fa-bars" onClick={() => setIsDisplay(true)}></i>}
                         <ul className={isDisplay ? "list-navigation show" : "list-navigation"}>
                             <li>
-                                <a className={"link"} href={"#about"}>About</a>
-                                <Link className={"link"} to={"/products"}>Products</Link>
+                                <a onClick={() => setIsDisplay(false)} className={"link"} href={"#about"}>About</a>
+                                <Link onClick={()=> setIsDisplay(false)} className={"link"} to={"/products"}>Products</Link>
                             </li>
                         </ul>
                     </nav>

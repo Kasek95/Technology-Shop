@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: "Cabin", sans-serif;
   scroll-behavior: smooth;
+  overflow-x: unset;
 }
 
 .container {
@@ -22,6 +23,21 @@
   height: 200px;
   background: radial-gradient(ellipse at center, rgba(87, 86, 86, 1.0), rgba(1, 1, 1, 1.0));
   margin-bottom: 10px;
+}
+.Form-Box {
+  position: relative;
+  width: 400px;
+  min-height: 450px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 425px) {
+    width: 310px;
+  }
 }
 
 

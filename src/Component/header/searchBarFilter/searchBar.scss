@@ -1,12 +1,16 @@
 .searchList {
-  position: absolute;
-  bottom: -41px;
-  max-height: 40px;
+  position: fixed;
+  top: 55px;
+  min-height: 0px;
   width: 300px;
   border-radius: 5px;
   margin-top: 10px;
-  overflow-x: auto;
+  overflow-x: clip;
   background-color: #ffffff;
+   @media (max-width: 590px) {
+     top: 88px;
+     width: 100%;
+   }
    .list-item {
      display: flex;
      justify-content: space-around;

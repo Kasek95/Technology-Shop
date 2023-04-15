@@ -1,6 +1,6 @@
 import "./searchBar.scss"
 import React, {useEffect, useState} from "react";
-import supabase from "../../../supabase";
+
 
 const SearchBar = ({search,products}) => {
 
@@ -8,7 +8,7 @@ const SearchBar = ({search,products}) => {
     return (
         <>
 
-                 <section className={"searchList"}>
+                 <ul className={"searchList"}>
                      {
                          products.filter((product) => {
                              if(search == "") {
@@ -18,13 +18,13 @@ const SearchBar = ({search,products}) => {
                              }
                          }).map(product=>
 
-                             search === "" ? null : <div key={product.id} className={"list-item"}>{product.products_name}
+                             search === "" ? null : <li key={product.id} className={"list-item"}>{product.products_name}
                                  <img src={product.products_img}/>
-                             </div>
+                             </li>
 
                          )
                      }
-                 </section>
+                 </ul>
 
         </>
     )
