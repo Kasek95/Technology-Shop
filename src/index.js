@@ -8,26 +8,30 @@ import {
     RouterProvider,
     Route
 } from "react-router-dom";
+import Header from "./Component/header/Header";
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <App/>
-    },
-    {
-        path: "/user",
-        element: <UserPage/>
-    },
-    {
-        path: "/products",
-        element: <ProductsPage/>
+        element:  <Header />,
+        children: [  {
+            path: "/",
+            element: <App/>
+        },
+            {
+                path: "/user",
+                element: <UserPage/>
+            },
+            {
+                path: "/products",
+                element: <ProductsPage/>
+            }]
     }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <RouterProvider router={router}/>
+     <><RouterProvider router={router}/></>
   </React.StrictMode>
 );
 

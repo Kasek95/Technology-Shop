@@ -8,7 +8,6 @@ const ProductsPage = () => {
 
     return (
         <>
-            <Header/>
             <ProductsMain/>
             <Footer/>
         </>

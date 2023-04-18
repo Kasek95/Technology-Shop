@@ -40,6 +40,70 @@
   }
 }
 
+.error {
+  position: absolute;
+  bottom: -22px;
+  color: red;
+}
+
+.cardContainer {
+  position: relative;
+  width: 300px;
+  min-height: 400px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+
+  .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    overflow: hidden;
+
+    i {
+      font-size: 1.2rem;
+      color: white;
+    }
+  }
+
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+    background: radial-gradient(ellipse at center, rgba(87, 86, 86, 1.0), rgba(1, 1, 1, 1.0));
+
+    img {
+      width: 180px;
+      height: 200px;
+      object-fit: contain;
+    }
+  }
+
+  h3 {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  button {
+    display: flex;
+    margin: 10px auto;
+    border: 1px solid white;
+    border-radius: 40px;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+}
+
 
 
 

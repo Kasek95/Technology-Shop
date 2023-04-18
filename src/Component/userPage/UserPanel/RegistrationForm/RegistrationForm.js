@@ -1,74 +1,110 @@
 import React, {useState} from "react";
-import "./registrationForm.scss"
+import {Formik,Form} from "formik"
+import CustomInput from "./CustomInput";
+import {advancedSchema} from "./Validation";
 import supabase from "../../../../supabase";
-const RegistrationForm = ({isDisplay,setIsDisplay}) => {
-    const [user,setUser] = useState()
-    const [email,setEmail] = useState()
-    const [pass1, setPass1] = useState()
-    const [pass2, setPass2] = useState()
-    const [adminKey, setAdminKey] = useState()
+import "./registrationForm.scss"
+
+
+const RegistrationForm = ({setIsDisplay}) => {
+
+
+
+    const onSubmit = async (values, actions,e)=> {
+
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        const { data, error } = await supabase.auth.signUp({
+            email: values.email,
+            password: values.pass1,
+            options: {
+                data: {
+                    userName: values.user,
+                    userType: values.adminKey === "Admin" ? "Admin" : "User"
+                },
+            },
+        })
+       
+
+        actions.resetForm()
+        setIsDisplay(false)
+
+    }
 
     return (
         <>
-           <form className={"registration"}>
-              <h2>Register</h2>
-               <div className={"customInput"}>
-                   <label htmlFor={"userName"}>User Name</label>
-                   <i className="fa-solid fa-user"></i>
-                   <input
-                       onChange={(e)=> setUser(e.target.value)}
-                       value={user} id={"userName"}
-                       type={"text"}
-                       placeholder={"Write your User Name"}/>
-               </div>
-               <div className={"customInput"}>
-                   <label htmlFor={"Email"}>E-mail</label>
-                   <i  className="email fa-regular fa-envelope"></i>
-                   <input
-                       onChange={(e)=> setEmail(e.target.value)}
-                       value={email} name={"Email"}
-                       type={"email"} id={"Email"}
-                       placeholder={"Write your E-mail"}/>
-               </div>
-               <div className={"customInput"}>
-                   <label htmlFor={"Password"}>Password</label>
-                   <i className="fa-solid fa-lock"></i>
-                   <input
-                       onChange={(e)=> setPass1(e.target.value)}
-                       value={pass1}
-                       name={"Password"}
-                       type={"password"}
-                       id={"Password"}
-                       placeholder={"Write your Password"}/>
-               </div>
-               <div className={"customInput"}>
-                   <label htmlFor={"Password2"}>Confirm Password</label>
-                   <i className="lock fa-solid fa-lock"></i>
-                   <input
-                       onChange={(e)=>setPass2(e.target.value)}
-                       value={pass2}
-                       name={"Password2"}
-                       type={"password"}
-                       id={"Password2"}
-                       placeholder={"Write your Password"}/>
-               </div>
+            <Formik
+                initialValues={{
+                    user: "",
+                    email: "",
+                    pass1: "",
+                    pass2: "",
+                    adminKey:""
+                }}
+                validationSchema={advancedSchema}
+                onSubmit={onSubmit}
+            >
+                {({ isSubmitting }) => (
+                    <Form className={"registration"}>
+                        <div className={"customInput"}>
+                            <i className="fa-solid fa-user"></i>
+                            <CustomInput
+                                label={`User Name`}
+                                name={"user"}
+                                type={"text"}
+                                placeholder={"Enter your user name!"}
+                            />
+                        </div>
 
-               <div className={"customInput"}>
-                   <label htmlFor={"Special"}>Special Code To Admin Panel </label>
-                   <i className="fa-solid fa-user-lock"></i>
-                   <input
-                       onChange={e => setAdminKey(e.target.value)}
-                       value={adminKey}
-                       name={"Special"}
-                       type={"text"} id={"Special"}
-                       placeholder={"Write code to get access to Admin"}/>
-               </div>
+                        <div className={"customInput"}>
 
-               <div className={"btnPanel"}>
-                   <button onClick={(e)=> setIsDisplay(false,e)} className={"btn"}>Register</button>
-                   <button onClick={(e)=> setIsDisplay(false,e)} className={"btn"}>Back To Login</button>
-               </div>
-           </form>
+                            <i  className="email fa-regular fa-envelope"></i>
+                            <CustomInput
+                                label={"E-mail"}
+                                name={"email"}
+                                type={"email"}
+                                placeholder={"Enter your E-mail"}
+                            />
+
+                        </div>
+                        <div className={"customInput"}>
+                            <i className="fa-solid fa-lock"></i>
+                            <CustomInput
+                                label={`Password`}
+                                name={"pass1"}
+                                type={"password"}
+                                placeholder={"Enter your password"}
+                            />
+                        </div>
+                        <div className={"customInput"}>
+
+                            <i className="lock fa-solid fa-lock"></i>
+                            <CustomInput
+                                label={`Repeat password`}
+                                name={"pass2"}
+                                type={"password"}
+                                placeholder={"Repeat password"}
+                            />
+                        </div>
+
+                        <div className={"customInput"}>
+                            <i className="fa-solid fa-user-lock"></i>
+                            <CustomInput
+                                label={"Special Code To Admin Panel"}
+                                name={"adminKey"}
+                                type={"text"}
+                                placeholder={"Write Special Key"}
+                            />
+                        </div>
+
+
+                        <div className={"btnPanel"}>
+                            <button className={"btn"}  type={"submit"}>Register</button>
+                            <button onClick={e => setIsDisplay(false)} className={"btn"}>Back to Login</button>
+                        </div>
+                    </Form>
+                )}
+            </Formik>
         </>
     )
 

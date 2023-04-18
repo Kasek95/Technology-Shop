@@ -1,16 +1,27 @@
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 import Shop from "../shop/Shop";
 import LikedProducts from "../likedProducts/LikedProducts";
 import SearchBar from "./searchBarFilter/SearchBar";
 import "./header.scss"
+import supabase from "../../supabase";
 
 
-const Header = ({products}) => {
+const Header = () => {
     const [isDisplay, setIsDisplay ] = useState(false)
     const [isDisplay2, setIsDisplay2] = useState(false)
     const [basket, setBasket] = useState(false)
     const [searchProducts, setSearchProducts] = useState("")
+    const [products,setProducts] = useState([])
+
+    useEffect(() => {
+        getProducts();
+    }, []);
+
+    async function getProducts() {
+        const { data } = await supabase.from("products").select();
+        setProducts(data);
+    }
 
 
 
@@ -57,7 +68,6 @@ const Header = ({products}) => {
                                 <span></span>
                                 <i onClick={() => setBasket(true)}
                                    className="fa-brands fa-shopify">
-
                                 </i>
                                 <Shop
                                     basket={basket}
@@ -78,7 +88,7 @@ const Header = ({products}) => {
                 </section>
 
             </header>
-
+<Outlet />
         </>
     )
 }

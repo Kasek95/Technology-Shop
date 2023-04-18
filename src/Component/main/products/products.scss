@@ -2,6 +2,8 @@
 
 .products {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
 
@@ -51,9 +53,54 @@
         img:hover {
           transform: scale(1.2);
         }
+      }
+    }
+    .showProducts {
+      margin-top: 50px;
 
+      h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .border-bottom {
+        width: 50px;
+        height: 3px;
+        background-color: #8e2de2;
+        margin-bottom: 40px;
 
       }
 
+      .singielProducts {
+        width: 100%;
+
+        .phoneProducts {
+          display: none;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+        .monitorProducts {
+          display: none;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          width: 100%;
+        }
+        .head-seatProducts {
+          display: none;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          width: 100%;
+        }
+        .show {
+          display: flex;
+        }
+        .red {
+          color: red;
+        }
+      }
     }
-  }
+
+
+}
