@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./mainRegistrationLogin.scss"
 import FormContainer from "./RegistrationForm/FormContainer";
+import Panel from "./panel/Panel";
 
 
 const MainUserPage = () => {
@@ -13,7 +14,7 @@ const MainUserPage = () => {
     return (
         <>
            <main className={"mainRegistrationLogin"}>
-               {user === null ? <FormContainer getUser={getUser}/> : <div>Hello Paweł</div>}
+               {user === null ? <FormContainer getUser={getUser}/> : <Panel getUser={getUser} />}
            </main>
         </>
     )

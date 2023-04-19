@@ -14,6 +14,10 @@ const Header = () => {
     const [searchProducts, setSearchProducts] = useState("")
     const [products,setProducts] = useState([])
 
+
+
+
+
     useEffect(() => {
         getProducts();
     }, []);
@@ -23,8 +27,6 @@ const Header = () => {
         setProducts(data);
     }
 
-
-
     const setShow = (item) => {
         setBasket(item)
     }
@@ -32,7 +34,7 @@ const Header = () => {
         setIsDisplay2(item)
     }
 
-
+  if(!products) return null
     return (
         <>
 
@@ -77,16 +79,24 @@ const Header = () => {
                         </section>
                         <section className={"likes-products"}>
                             <i onClick={() => setIsDisplay2(true)}
-                               className="fa-regular fa-heart">
+                               className="fa-regular fa-heart"
+                            >
                             </i>
-                            <LikedProducts
-                                isDisplay2={isDisplay2}
-                                setIsDisplay2={setLikesClose}
-                            />
+                            {products.filter(el => el.isLiked === true).length === 0 ? null :
+                                <div className={"productsCounter"}>
+                                    <span>{products.filter(el => el.isLiked === true).length}</span>
+                                </div>
+                            }
+
                         </section>
                     </section>
                 </section>
-
+                <LikedProducts
+                    getProducts={getProducts}
+                    products={products}
+                    isDisplay2={isDisplay2}
+                    setIsDisplay2={setLikesClose}
+                />
             </header>
 <Outlet />
         </>

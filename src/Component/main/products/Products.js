@@ -11,7 +11,7 @@ const Products = () => {
     const [isDisplay,setIsDisplay] = useState(false)
     const [isDisplay2,setIsDisplay2] = useState(false)
     const [isDisplay3,setIsDisplay3] = useState(false)
-    console.log(products)
+
 
 
 
@@ -54,6 +54,7 @@ const Products = () => {
                 isLiked: !liked
             })
             .eq("id", id)
+            getProducts()
     }
 
    if(!products) return  null
@@ -94,7 +95,7 @@ const Products = () => {
                                         </div>
                                         <div className={"img"}>
                                             <img src={el.products_img}/>
-                                        </div>"
+                                        </div>
                                         <h3>{el.products_name}</h3>
                                         <span>Price: {el.products_price}$</span>
                                         <button>Add to Basket</button>
@@ -114,7 +115,7 @@ const Products = () => {
                                          </div>
                                         <div className={"img"}>
                                             <img src={el.products_img}/>
-                                        </div>"
+                                        </div>
                                         <h3>{el.products_name}</h3>
                                         <span>Price: {el.products_price}$</span>
                                         <button>Add to Basket</button>
@@ -135,7 +136,7 @@ const Products = () => {
                                         </div>
                                         <div className={"img"}>
                                             <img src={el.products_img}/>
-                                        </div>"
+                                        </div>
                                         <h3>{el.products_name}</h3>
                                         <span>Price: {el.products_price}$</span>
                                         <button>Add to Basket</button>

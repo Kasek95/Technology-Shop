@@ -18,7 +18,8 @@ const SearchBar = ({search,products}) => {
                              }
                          }).map(product=>
 
-                             search === "" ? null : <li key={product.id} className={"list-item"}>{product.products_name}
+                             search === "" ? null : <li key={product.id} className={"list-item"}>
+                                 <span>{product.products_name}</span>
                                  <img src={product.products_img}/>
                              </li>
 
