@@ -1,0 +1,76 @@
+.addProducts {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   border: 1px solid rgba(255,255,255,0.5);
+   width: 500px;
+   i {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     padding: 5px;
+     border: 1px solid rgba(255,255,255,0.5);
+     border-radius: 50%;
+     color: rgba(255,255,255,0.5);;
+   }
+  .customInput {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+    @media (max-width: 425px) {
+      width: 280px;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 1em;
+      padding: 0 35px 0 5px;
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    label {
+      font-size: .9em;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+  }
+  .customSelect {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 310px;
+    @media (max-width: 425px) {
+      width: 280px;
+    }
+    label {
+      font-size: .9em;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+    .selectBox {
+      outline: none;
+      width: 100%;
+      background: none;
+
+    }
+  }
+  .addProduct {
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background: none;
+    margin: 5px auto;
+    outline: none;
+  }
+}

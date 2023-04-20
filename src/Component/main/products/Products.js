@@ -16,19 +16,19 @@ const Products = () => {
 
 
     const showMonitorOnly = () => {
-        setIsDisplay(true)
+        setIsDisplay(!isDisplay)
         setIsDisplay2(false)
         setIsDisplay3(false)
     }
     const HeadSeatOnly = () => {
         setIsDisplay(false)
-        setIsDisplay2(true)
+        setIsDisplay2(!isDisplay2)
         setIsDisplay3(false)
     }
     const PhoneOnly = () => {
         setIsDisplay(false)
         setIsDisplay2(false)
-        setIsDisplay3(true)
+        setIsDisplay3(!isDisplay3)
     }
 
     useEffect(() => {

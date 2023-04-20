@@ -1,0 +1,85 @@
+.remove-List {
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  height: 500px;
+  border: 2px solid rgba(255,255,255,0.5);
+   @media (max-width: 900px) {
+     width: 100%;
+   }
+  .hideDeletePanel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    color: rgba(255,255,255,0.5);;
+  }
+
+  input {
+    outline: none;
+    background: none;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 30px;
+    color: white;
+    width: 280px;
+    min-height: 30px;
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+
+   .removeListItem {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border: 1px solid rgba(255,255,255,0.5);
+     color: white;
+     width: 80%;
+     min-height: 100px;
+     list-style: none;
+     margin: 10px ;
+      @media (max-width: 425px) {
+        width: auto;
+      }
+
+     .item_Info {
+       display: flex;
+       gap: 10px;
+       align-items: center;
+       margin-left: 10px;
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: contain;
+        }
+     }
+     .delete {
+       outline: none;
+       background: none;
+       color: rgba(255,255,255,0.5);
+       margin-right: 10px;
+       border: 1px solid rgba(255,255,255,0.5);
+       border-radius: 50%;
+        i {
+          padding: 5px;
+        }
+       @media (max-width: 800px) {
+         margin-left: 10px;
+       }
+     }
+  }
+}
+
+::-webkit-scrollbar {
+
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.5);
+}
