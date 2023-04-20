@@ -84,11 +84,18 @@
            }
            .add_product_form {
              display: none;
+             @media (max-width: 520px) {
+               width: 100%;
+             }
            }
            .remove_product {
              display: none;
              align-items: center;
              justify-content: center;
+             @media(max-width: 520px) {
+               width: 100%;
+             }
+
            }
           .show {
             display: flex
