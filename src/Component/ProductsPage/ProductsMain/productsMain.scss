@@ -1,3 +1,27 @@
 .products-main {
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+   .allProducts {
+     display: flex;
+     height: 700px;
+     border: 1px solid black;
+      .categoryOfProducts {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        width: 20%;
+        border-right: 1px solid black;
+        height: 100% ;
+        span {
+          margin-left: 20px;
+          margin-bottom: 20px;
+        }
+
+      }
+
+   }
 }

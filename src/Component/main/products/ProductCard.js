@@ -7,7 +7,7 @@ const ProductCard = ({el,addLikedProduct,addToBasket}) => {
             <div className={"cardContainer"} key={el.id}>
                 <div className={"icon"}>
                     <i onClick={() => addLikedProduct(el.id)}
-                       className={el.isLiked ? "fa-solid fa-heart red" : "fa-solid fa-heart"}>
+                       className={el.isLiked ? "fa-solid fa-heart red" : "fa-regular fa-heart"}>
                     </i>
                 </div>
                 <div className={"img"}>

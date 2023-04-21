@@ -16,8 +16,6 @@ const Header = () => {
 
 
 
-
-
     useEffect(() => {
         getProducts();
     }, []);
@@ -34,7 +32,7 @@ const Header = () => {
         setIsDisplay2(item)
     }
     let inShop = products.filter(item => item.inShop === true)
-    let sum = inShop.map(el => el.product_qty * 1)
+    let sumOfProducts = inShop.map(el => el.product_qty * 1)
 
 
 
@@ -67,19 +65,20 @@ const Header = () => {
 
                     <section className={"interface"}>
                         <section className={"user"}>
-                           <Link to={"/user"}> <i className="fa-regular fa-circle-user"></i></Link>
+                           <Link to={"/user"}>
+                               <i className="fa-regular fa-circle-user"></i>
+                           </Link>
                         </section>
                         <section  className={"shop"}>
 
-                                {products.filter(item => item.inShop === true).length === 0 ? null :
+                                 {products.filter(item => item.inShop === true).length === 0 ? null :
                                     <div className={"productsInShop"}>
-                                    <span>{sum.reduce((a,b)=> a+b)}</span>
-                                </div>}
+                                        <span>{sumOfProducts.reduce((a,b)=> a+b)}</span>
+                                    </div>
+                                 }
                                 <i onClick={() => setBasket(true)}
                                    className="fa-brands fa-shopify">
                                 </i>
-
-
                         </section>
                         <section className={"likes-products"}>
                             <i onClick={() => setIsDisplay2(true)}
@@ -102,9 +101,11 @@ const Header = () => {
                     setIsDisplay2={setLikesClose}
                 />
                 <Shop
+                    getProducts={getProducts}
                     basket={basket}
                     setBasket={setShow}
                     products={products}
+                    sumOfProducts={sumOfProducts}
                 />
             </header>
 <Outlet />

@@ -56,6 +56,7 @@ const Products = () => {
             })
             .eq("id", id)
             getProducts()
+        window.location.reload();
     }
     const addToBasket = async (id) => {
         let product = products.find(el => el.id === id)
@@ -66,7 +67,7 @@ const Products = () => {
                   product_qty: product.inShop === true ? (product.product_qty + 1) : product.product_qty
               })
               .eq("id", id)
-
+             window.location.reload()
             getProducts()
     }
 

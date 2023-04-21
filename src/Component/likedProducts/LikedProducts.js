@@ -3,7 +3,8 @@ import "./likedProducts.scss"
 import supabase from "../../supabase";
 
 
-const LikedProducts = ({isDisplay2,setIsDisplay2, products}) => {
+const LikedProducts = ({isDisplay2,setIsDisplay2, products,getProducts}) => {
+
 
     const removeLike = async (id) => {
          let product = products.find(el => el.id == id)
@@ -13,7 +14,19 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, products}) => {
                 isLiked: liked
             })
             .eq("id", id)
+        getProducts()
+    }
 
+    const addToBasket = async (id) => {
+        let product = products.find(el => el.id === id)
+        const {data, error}= await supabase
+            .from("products")
+            .update({
+                inShop: true,
+                product_qty: product.inShop === true ? (product.product_qty + 1) : product.product_qty
+            })
+            .eq("id", id)
+        getProducts()
     }
 
 
@@ -38,7 +51,7 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, products}) => {
                                    </div>
                                    <span>Price: {item.products_price}$</span>
                                </div>
-                               <button >Add To Basket</button>
+                               <button onClick={() => addToBasket(item.id)} >Add To Basket</button>
                            </li>
                        ))
                    }
