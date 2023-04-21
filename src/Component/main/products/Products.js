@@ -4,6 +4,7 @@ import monitor from "../../assets/337912092_268168178868459_8084184389387433978_
 import phone from "../../assets/339077469_214418724564913_5637508898114760834_n.png"
 import headset from "../../assets/339071964_1275987013030099_1893502995452438114_n.png"
 import supabase from "../../../supabase";
+import ProductCard from "./ProductCard";
 
 
 const Products = () => {
@@ -46,7 +47,7 @@ const Products = () => {
         setProducts(elm => elm.map(elem => {
             return   elem.id === id ? {...elem , isLiked: !elem.isLiked} : elem
         }))
-        let product = products.find(el => el.id == id)
+        let product = products.find(el => el.id === id)
         let liked = product.isLiked
 
         const {data,error} = await supabase.from("products")
@@ -54,6 +55,18 @@ const Products = () => {
                 isLiked: !liked
             })
             .eq("id", id)
+            getProducts()
+    }
+    const addToBasket = async (id) => {
+        let product = products.find(el => el.id === id)
+        const {data, error}= await supabase
+              .from("products")
+              .update({
+                  inShop: true,
+                  product_qty: product.inShop === true ? (product.product_qty + 1) : product.product_qty
+              })
+              .eq("id", id)
+
             getProducts()
     }
 
@@ -87,19 +100,7 @@ const Products = () => {
                             {products
                                 .filter((el) => el.product_category === "Phone")
                                 .map((el) => (
-                                    <div className={"cardContainer"} key={el.id}>
-                                        <div className={"icon"}>
-                                            <i onClick={() => addLikedProduct(el.id)}
-                                               className={el.isLiked ? "fa-solid fa-heart red" : "fa-solid fa-heart"}>
-                                            </i>
-                                        </div>
-                                        <div className={"img"}>
-                                            <img src={el.products_img}/>
-                                        </div>
-                                        <h3>{el.products_name}</h3>
-                                        <span>Price: {el.products_price}$</span>
-                                        <button>Add to Basket</button>
-                                    </div>
+                                    <ProductCard el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
                                 ))}
                         </section>
 
@@ -107,19 +108,7 @@ const Products = () => {
                             {products
                                 .filter(el => el.product_category === "Monitor")
                                 .map(el => (
-                                    <div className={"cardContainer"} key={el.id}>
-                                         <div className={"icon"}>
-                                             <i onClick={() => addLikedProduct(el.id)}
-                                                className={el.isLiked ? "fa-solid fa-heart red" : "fa-solid fa-heart"}>
-                                             </i>
-                                         </div>
-                                        <div className={"img"}>
-                                            <img src={el.products_img}/>
-                                        </div>
-                                        <h3>{el.products_name}</h3>
-                                        <span>Price: {el.products_price}$</span>
-                                        <button>Add to Basket</button>
-                                    </div>
+                                    <ProductCard el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
                                 ))
                             }
                         </section>
@@ -128,19 +117,7 @@ const Products = () => {
                             {products
                                 .filter(el => el.product_category === "Head-Set")
                                 .map(el => (
-                                    <div className={"cardContainer"} key={el.id}>
-                                        <div className={"icon"}>
-                                            <i onClick={() => addLikedProduct(el.id)}
-                                               className={el.isLiked ? "fa-solid fa-heart red" : "fa-solid fa-heart"} >
-                                            </i>
-                                        </div>
-                                        <div className={"img"}>
-                                            <img src={el.products_img}/>
-                                        </div>
-                                        <h3>{el.products_name}</h3>
-                                        <span>Price: {el.products_price}$</span>
-                                        <button>Add to Basket</button>
-                                    </div>
+                                     <ProductCard el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
                                 ))
                             }
                         </section>

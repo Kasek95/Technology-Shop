@@ -16,7 +16,7 @@ const RemoveProduct = ({setIsDisplay}) => {
     const [search,setSearch] = useState("")
     const [hide,setHide] = useState(false)
 
-    console.log(editProduct)
+
     useEffect(() => {
         getProducts();
     }, []);

@@ -33,6 +33,10 @@ const Header = () => {
     const setLikesClose = (item) => {
         setIsDisplay2(item)
     }
+    let inShop = products.filter(item => item.inShop === true)
+    let sum = inShop.map(el => el.product_qty * 1)
+
+
 
   if(!products) return null
     return (
@@ -66,16 +70,16 @@ const Header = () => {
                            <Link to={"/user"}> <i className="fa-regular fa-circle-user"></i></Link>
                         </section>
                         <section  className={"shop"}>
-                            <div  className={"shop-container"}>
-                                <span></span>
+
+                                {products.filter(item => item.inShop === true).length === 0 ? null :
+                                    <div className={"productsInShop"}>
+                                    <span>{sum.reduce((a,b)=> a+b)}</span>
+                                </div>}
                                 <i onClick={() => setBasket(true)}
                                    className="fa-brands fa-shopify">
                                 </i>
-                                <Shop
-                                    basket={basket}
-                                    setBasket={setShow}
-                                />
-                            </div>
+
+
                         </section>
                         <section className={"likes-products"}>
                             <i onClick={() => setIsDisplay2(true)}
@@ -96,6 +100,11 @@ const Header = () => {
                     products={products}
                     isDisplay2={isDisplay2}
                     setIsDisplay2={setLikesClose}
+                />
+                <Shop
+                    basket={basket}
+                    setBasket={setShow}
+                    products={products}
                 />
             </header>
 <Outlet />
