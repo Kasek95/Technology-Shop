@@ -39,7 +39,7 @@ const Shop = ({basket,setBasket,products,sumOfProducts,getProducts}) => {
                 .from("products")
                 .update({
                     inShop: false,
-                    product_qty: 1
+                    product_qty: 0
                 })
                 .eq("id", id)
             getProducts()

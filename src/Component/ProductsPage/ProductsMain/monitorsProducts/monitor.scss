@@ -1,0 +1,136 @@
+.productCard {
+   position: relative;
+   margin: 10px 20px;
+   border: 1px solid white;
+    .icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+    }
+    .red {
+      color: red;
+    }
+   h3 {
+          margin: 10px;
+   }
+   .infoContainer {
+     display: flex;
+     align-items: start;
+     justify-content: space-between;
+      width: 100%;
+
+        @media (max-width: 768px) {
+           flex-direction: column;
+           align-items: center;
+        }
+       .imgContainer {
+         position: relative;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 300px;
+         height: 300px;
+         background: radial-gradient(ellipse at center, rgba(87, 86, 86, 1.0), rgba(1, 1, 1, 1.0));
+          margin-left: 20px;
+          margin-right: 10px;
+          @media (max-width: 768px) {
+            margin: 0 auto;
+            width: 250px;
+          }
+           span {
+             position: absolute;
+             width: auto;
+             height: auto;
+             bottom: 10px;
+             right: 5px;
+             font-size: 2rem;
+             color:white;
+           }
+          img {
+            width: 280px;
+            height: 280px;
+            object-fit: contain;
+            @media (max-width: 768px) {
+
+              width: 230px;
+            }
+          }
+       }
+       span {
+
+         margin-right: 20px;
+         width: 60%;
+         height: 300px;
+         overflow-x: auto;
+         @media (max-width: 768px) {
+            text-align: center;
+            height: 200px;
+            width: 100%;
+            margin-bottom: 10px;
+            padding-left: 20px;
+         }
+       }
+   }
+  .OrderBox {
+    display: flex;
+    gap: 30px;
+    margin:30px;
+     .inputBox {
+       position: relative;
+       display: flex;
+       .decrease {
+         position: absolute;
+         left: -19px;
+         outline: none;
+         background: linear-gradient(to right, #8e2de2, #4a00e0);
+         border: 1px solid #ced4da;
+         border-top-left-radius: 30px;
+         border-bottom-left-radius: 30px;
+         color: white;
+         height: 40px;
+         width: 20px;
+       }
+       .increase {
+         position: absolute;
+         right: -19px;
+         outline: none;
+         background: linear-gradient(to right, #8e2de2, #4a00e0);
+         border: 1px solid #ced4da;
+         border-left: unset;
+         border-top-right-radius: 30px;
+         border-bottom-right-radius: 30px;
+         color: white;
+         height: 40px;
+         width: 20px;
+       }
+       input {
+         border-top: 1px solid #ced4da;
+         border-bottom: 1px solid #ced4da;
+         background: linear-gradient(to right, #8e2de2, #4a00e0);
+         color: white;
+         outline: none;
+         text-align: center;
+         width: 30px;
+         height: 40px;
+       }
+       input[type="number"]::-webkit-inner-spin-button {
+         display: none;
+       }
+
+     }
+    .addToBasket{
+      outline: none;
+      border: 1px solid white;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      border-top-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 10px;
+      width: 130px;
+      height: 40px;
+    }
+  }
+
+}

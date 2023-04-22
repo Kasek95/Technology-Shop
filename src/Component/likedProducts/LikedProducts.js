@@ -23,7 +23,7 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, products,getProducts}) => {
             .from("products")
             .update({
                 inShop: true,
-                product_qty: product.inShop === true ? (product.product_qty + 1) : product.product_qty
+                product_qty: product.product_qty + 1
             })
             .eq("id", id)
         getProducts()
