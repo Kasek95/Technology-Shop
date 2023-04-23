@@ -6,7 +6,7 @@ You can add products to the cart, delete, like, and you have access to the admin
 And we have a search bar where you can enter the product and whether we have it in stock.
 
 ## Technologies
-Projest is created with:
+Project is created with:
 * React
 * JavaScript 
 * SASS/SCSS
@@ -19,7 +19,7 @@ To run this project, install it locally using npm:
 
 ```
 1. Download repository to your desktop.
-2. 0pen the repository in your code editor.
+2.Open the repository in your code editor.
 3. In terminal write npm install
 4. Next write npm start .
 ```
