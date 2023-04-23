@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 # Technology Shop
+=======
+Technology use to make this project: 
+1.React,
+2.JavaScript ES6
+3.Redux
+4.SASS/SCSS
+5.Api
+6.Supabase
+>>>>>>> c0010a15c1a4f5a3b79bbdbaa3b200dcf2b159a1
 
 It is a small online store that has products such as "headphones, phones, monitors. 
 You can add products to the cart, delete, like, and you have access to the admin panel that can delete, add and edit products!.
