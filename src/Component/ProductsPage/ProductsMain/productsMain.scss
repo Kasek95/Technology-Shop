@@ -32,12 +32,12 @@
          width: $one-hundred-percent;
        }
         span {
+          position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
           overflow: hidden;
-          height: 100px;
-          position: relative;
+          height: $one-hundred;
           color: $colorWhite;
           margin-right: $Tweenty;
           margin-left: $Tweenty;
@@ -48,7 +48,7 @@
           z-index: 999;
           @media (max-width: $seven-hundred-sixty-eight) {
             margin-left: $ten;
-            height: 50px;
+            height: $fifty;
             margin-right: unset;
 
           }
@@ -56,22 +56,18 @@
        span::before {
          content: '';
          position: absolute;
-         width: 300%;
-         height: 110%;
-         background: conic-gradient(from 100deg, rgb(0 0 0 / 0%) 70%, rgb(11 78 230 / 9%)80%, rgb(0, 220, 255) 100%);
-         left: -95%;
-
+         width: 118%;
+         height: 265%;
+         background: conic-gradient(from 90deg, rgb(0 0 0 / 0%) 70%, rgb(11 78 230 / 9%)80%, rgb(0, 220, 255) 100%);
          z-index: -3;
-         animation: rotate 3s linear infinite;
-         @media (max-width: $seven-hundred-sixty-eight) {
-           left: -50%;
-         }
+         animation: rotate 6s linear infinite;
+
        }
 
        span::after {
          content: "";
          position: absolute;
-          inset: 4px;
+         inset: 4px;
          background: $backGrandColor;
          z-index: -1;
        }

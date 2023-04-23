@@ -2,8 +2,8 @@
 @import "../../sass/pixel";
 
 .searchList {
-  position: fixed;
-  top: $fifty-five;
+  position: absolute;
+  top: 1.5rem;
   min-height: 0;
   width: $three-hundred;
   border-radius: $five;
@@ -23,6 +23,8 @@
      height: $forty;
      list-style: unset;
      background-color: $colorWhite;
+     text-decoration: none;
+     color: $black;
       span {
         margin-left: $ten;
       }

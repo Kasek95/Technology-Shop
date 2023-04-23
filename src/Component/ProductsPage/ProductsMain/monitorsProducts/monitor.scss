@@ -4,7 +4,10 @@
 .productCard {
    position: relative;
    margin: $ten $Tweenty;
-   border: 1px solid $colorWhite;
+  background:  #020223;
+   z-index: 3;
+   color:$colorWhite;
+
     .icon {
       position: absolute;
       top: $ten;
@@ -122,6 +125,7 @@
 
      }
     .addToBasket{
+      color: $colorWhite;
       outline: none;
       border: 1px solid $colorWhite;
       background: $backGrandColor;
@@ -134,5 +138,13 @@
       height: $forty;
     }
   }
+}
 
+
+.productCard::after {
+  content: "";
+  position: absolute;
+  inset: $six;
+  background:$backGrandColor;
+  z-index: -50;
 }

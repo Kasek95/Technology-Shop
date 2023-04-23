@@ -26,12 +26,20 @@ const Header = () => {
         const { data } = await supabase.from("products").select();
         dispatch(getAllProducts({items:data}))
     }
-
-    const setShow = (item) => {
+    const closeShop = (item) => {
         setBasket(item)
     }
-    const setLikesClose = (item) => {
+    const closeLikeProducts = (item) => {
         setIsDisplay2(item)
+    }
+
+    const setShow = () => {
+        setBasket(true)
+        setIsDisplay2(false)
+    }
+    const setLikesClose = () => {
+        setIsDisplay2(true)
+        setBasket(false)
     }
     let inShop = product.items.filter(item => item.inShop === true)
     let sumOfProducts = inShop.map(el => el.product_qty * 1)
@@ -49,7 +57,7 @@ const Header = () => {
                         {isDisplay ? <i className="fa-solid fa-x" onClick={() => setIsDisplay(false)}></i> : <i className="fa-solid fa-bars" onClick={() => setIsDisplay(true)}></i>}
                         <ul className={isDisplay ? "list-navigation show" : "list-navigation"}>
                             <li>
-                                <a onClick={() => setIsDisplay(false)} className={"link"} href={"#about"}>About</a>
+                                <a onClick={() => setIsDisplay(false) } className={"link"} href={"#about"}>About</a>
                                 <Link onClick={()=> setIsDisplay(false)} className={"link"} to={"/products"}>Products</Link>
                             </li>
                         </ul>
@@ -78,12 +86,12 @@ const Header = () => {
                                         <span>{sumOfProducts.reduce((a,b)=> a+b)}</span>
                                     </div>
                                  }
-                                <i onClick={() => setBasket(true)}
+                                <i onClick={setShow}
                                    className="fa-brands fa-shopify">
                                 </i>
                         </section>
                         <section className={"likes-products"}>
-                            <i onClick={() => setIsDisplay2(true)}
+                            <i onClick={setLikesClose}
                                className="fa-regular fa-heart"
                             >
                             </i>
@@ -100,12 +108,12 @@ const Header = () => {
                     getProducts={getProducts}
                     products={product}
                     isDisplay2={isDisplay2}
-                    setIsDisplay2={setLikesClose}
+                    setIsDisplay2={closeLikeProducts}
                 />
                 <Shop
                     getProducts={getProducts}
                     basket={basket}
-                    setBasket={setShow}
+                    setBasket={closeShop}
                     products={product}
                     sumOfProducts={sumOfProducts}
                 />
