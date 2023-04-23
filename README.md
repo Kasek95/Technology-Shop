@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+Technology use to make this project: 
+1.React,
+2.JavaScript ES6
+3.Redux
+4.SASS/SCSS
+5.Api
+6.Supabase
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
