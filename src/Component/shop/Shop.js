@@ -3,14 +3,17 @@ import "./shop.scss"
 import EmptyShop from "./EmptyShop";
 import {Link} from "react-router-dom";
 import supabase from "../../supabase";
+import {useSelector} from "react-redux";
 
-const Shop = ({basket,setBasket,products,sumOfProducts,getProducts}) => {
-        const sumOfPrices = products.filter(item => item.inShop === true);
+
+const Shop = ({basket,setBasket,sumOfProducts, getProducts}) => {
+        const product = useSelector((state)=>state.product.value)
+        const sumOfPrices = product.items.filter(item => item.inShop === true);
         const totalSum = sumOfPrices.map(item => item.products_price * item.product_qty)
 
 
         const increaseProduct = async (id) => {
-            const findProducts = products.find(el => el.id === id)
+            const findProducts = product.items.find(el => el.id === id)
 
             const {data, error}= await supabase
                 .from("products")
@@ -18,11 +21,11 @@ const Shop = ({basket,setBasket,products,sumOfProducts,getProducts}) => {
                     product_qty: findProducts.product_qty + 1
                 })
                 .eq("id", id)
-            getProducts()
+                getProducts()
         }
 
         const decreaseProduct = async(id) => {
-            const findProducts = products.find(el => el.id === id)
+            const findProducts = product.items.find(el => el.id === id)
 
             const {data, error}= await supabase
                 .from("products")
@@ -30,11 +33,10 @@ const Shop = ({basket,setBasket,products,sumOfProducts,getProducts}) => {
                     product_qty:findProducts.product_qty === 1 ? 1 : findProducts.product_qty - 1
                 })
                 .eq("id", id)
-            getProducts()
+             getProducts()
         }
 
         const removeFromShop = async (id) => {
-
             const {data, error}= await supabase
                 .from("products")
                 .update({
@@ -46,7 +48,7 @@ const Shop = ({basket,setBasket,products,sumOfProducts,getProducts}) => {
         }
 
 
-    if(!products) return null
+    if(!product.items) return null
     return (
         <section className={basket ? "shopCart show " : "shopCart"}>
             <div className={"shopCartHeader"}>
@@ -66,8 +68,8 @@ const Shop = ({basket,setBasket,products,sumOfProducts,getProducts}) => {
                 }
             </div>
             <section className={"shopSingielItem"}>
-                {products.filter(el => el.inShop === true).length === 0 ? <EmptyShop/> :
-                 products.filter(product => product.inShop === true)
+                {product.items.filter(el => el.inShop === true).length === 0 ? <EmptyShop/> :
+                 product.items.filter(product => product.inShop === true)
                      .map(product => (
                          <article key={product.id} className={"itemCard"}>
                              <i onClick={()=> removeFromShop(product.id)} className="deleteFromShop fa-solid fa-x"></i>

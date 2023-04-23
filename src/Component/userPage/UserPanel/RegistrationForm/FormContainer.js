@@ -1,12 +1,17 @@
 import React, {useState} from "react";
 import RegistrationForm from "./RegistrationForm";
+import {useDispatch} from "react-redux";
+import {login} from "../../../../features/user"
+
 import supabase from "../../../../supabase";
 
 
-const  FormContainer  = ({getUser}) => {
+
+const  FormContainer  = () => {
     const [isDisplay, setIsDisplay] = useState(false)
     const [email,setEmail] = useState();
     const [password, setPassword] = useState()
+    const dispatch = useDispatch()
 
     const setDisplay = (parm) => {
         setIsDisplay(parm)
@@ -20,7 +25,7 @@ const  FormContainer  = ({getUser}) => {
             password: password
         })
         if(data.user.email !== "") {
-            getUser(data.user)
+            dispatch(login({user:data.user}))
         }
 
         setPassword("")

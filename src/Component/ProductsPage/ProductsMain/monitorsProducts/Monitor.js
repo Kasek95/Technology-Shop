@@ -7,7 +7,7 @@ const Monitor = ({products, getProducts,likedProducts}) => {
     if(!products) return null
     return (
         <>
-            {products.filter(product => product.product_category === "Monitor")
+            {products.items.filter(product => product.product_category === "Monitor")
                 .map(product => (
                     <SingielMonitor product={product} getProducts={getProducts} likedProducts={likedProducts}/>
                 ))

@@ -1,40 +1,43 @@
+@import "../../../../sass/colors";
+@import "../../../../sass/pixel";
+
 .remove-List {
   position: relative;
   display: flex;
   overflow-x: auto;
   flex-direction: column;
   align-items: center;
-  width: 700px;
-  height: 500px;
-  border: 2px solid rgba(255,255,255,0.5);
-   @media (max-width: 900px) {
-     width: 100%;
+  width: $seven-hundred;
+  height: $five-hundred;
+  border: 2px solid $colorBorderForm;
+   @media (max-width: $nine-hundred) {
+     width: $one-hundred-percent;
    }
   .hideDeletePanel {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px;
-    border: 1px solid rgba(255,255,255,0.5);
+    top: $ten;
+    right: $ten;
+    padding: $five;
+    border: 1px solid $colorBorderForm;
     border-radius: 50%;
-    color: rgba(255,255,255,0.5);
-    @media (max-width: 326px) {
-      right: 0px;
+    color: $colorBorderForm;
+    @media (max-width: $three-hundred-tweenty-six) {
+      right: 0;
     }
   }
 
   input {
     outline: none;
     background: none;
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 30px;
-    color: white;
-    width: 280px;
-    min-height: 30px;
-    margin-top: 10px;
-    padding-left: 20px;
-     @media (max-width: 420px) {
-       margin-right: 25px;
+    border: 2px solid $colorBorderForm;
+    border-radius: $thirty;
+    color: $colorWhite;
+    width: $two-hundred-eighty;
+    min-height: $thirty;
+    margin-top: $ten;
+    padding-left: $Tweenty;
+     @media (max-width: $four-hundred-tweenty) {
+       margin-right: $tweenty-five;
      }
   }
 
@@ -43,54 +46,54 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
-     border: 1px solid rgba(255,255,255,0.5);
-     color: white;
+     border: 1px solid $colorBorderForm;
+     color: $colorWhite;
      width: 80%;
-     min-height: 100px;
+     min-height: $one-hundred;
      list-style: none;
-     margin: 10px ;
-      @media (max-width: 425px) {
+     margin: $ten ;
+      @media (max-width: $four-hundred-tweenty-five) {
            width: unset;
       }
 
      .item_Info {
        display: flex;
-       gap: 10px;
+       gap: $ten;
        align-items: center;
-       margin-left: 10px;
+       margin-left: $ten;
         img {
-          width: 50px;
-          height: 50px;
+          width: $fifty;
+          height: $fifty;
           object-fit: contain;
         }
      }
    .btnContainer {
      display: flex;
      align-items: center;
-     @media (max-width: 800px) {
-       margin-left: 10px;
+     @media (max-width: $eight-hundred) {
+       margin-left: $ten;
      }
      .delete {
        outline: none;
        background: none;
-       color: rgba(255,255,255,0.5);
-       margin-right: 10px;
-       margin-left: 5px;
-       border: 1px solid rgba(255,255,255,0.5);
+       color: $colorBorderForm;
+       margin-right: $ten;
+       margin-left: $five;
+       border: 1px solid $colorBorderForm;
        border-radius: 50%;
        i {
-         padding: 5px;
+         padding: $five;
        }
      }
      .editBtn {
        outline: none;
        background: none;
-       color: rgba(255,255,255,0.5);
-       margin-left: 5px;
-       border: 1px solid rgba(255,255,255,0.5);
+       color: $colorBorderForm;
+       margin-left: $five;
+       border: 1px solid $colorBorderForm;
        border-radius: 50%;
         i {
-          padding: 5px;
+          padding:$ten;
         }
      }
    }
@@ -105,98 +108,98 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  border: 1px solid rgba(255,255,255,0.5);
-  border-radius: 20px;
-  padding-top: 20px;
+  width: $five-hundred;
+  border: 1px solid $colorBorderForm;
+  border-radius:$Tweenty;
+  padding-top: $Tweenty;
 
    i {
      position: absolute;
-     top: 10px;
-     right: 10px;
-     padding: 5px;
-     border: 1px solid rgba(255,255,255,0.5);
+     top: $ten;
+     right: $ten;
+     padding: $five;
+     border: 1px solid $colorBorderForm;
      border-radius: 50%;
-     color: rgba(255,255,255,0.5);
+     color: $colorBorderForm;
    }
    .customInput {
      display: flex;
      flex-direction: column;
-     margin-bottom: 20px;
-     width: 310px;
-     border-bottom: 2px solid #fff;
-     @media (max-width: 505px){
-       width: 290px;
+     margin-bottom: $Tweenty;
+     width: $three-hundred-ten;
+     border-bottom: 2px solid $colorWhite;
+     @media (max-width: $five-hundred-five){
+       width: $two-hundred-ninety;
      }
      input {
        border: none;
        background: transparent;
        outline: none;
        font-size: 1em;
-       padding: 0 35px 0 5px;
-       color: #fff;
+       padding: 0 $thirty-five 0 $five;
+       color: $colorWhite;
      }
 
      label {
        font-size: .9em;
-       margin-bottom: 5px;
-       color: #fff;
+       margin-bottom: $five;
+       color: $colorWhite;
      }
    }
    .customTextArea {
      display: flex;
      flex-direction: column;
-     margin-bottom: 20px;
-     max-width: 310px;
-     @media (max-width: 505px){
-       width: 290px;
+     margin-bottom: $Tweenty;
+     max-width: $three-hundred-ten;
+     @media (max-width: $five-hundred-five){
+       width: $two-hundred-ninety;
      }
       textarea {
         background: none;
-        border: 1px solid rgba(255,255,255,0.5);
-        width: 310px;
-        @media (max-width: 505px){
-          width: 290px;
+        border: 1px solid $colorBorderForm;
+        width: $three-hundred-ten;
+        @media (max-width: $five-hundred-five){
+          width: $two-hundred-ninety;
         }
       }
      label {
        font-size: .9em;
-       margin-bottom: 5px;
-       color: #fff;
+       margin-bottom: $five;
+       color: $colorWhite;
      }
    }
   .customSelect {
-    width: 310px;
+    width: $three-hundred-ten;
     background: none;
-    border: 1px solid rgba(255,255,255,0.5);
-    margin-bottom: 20px;
-    @media (max-width: 505px){
-      width: 290px;
+    border: 1px solid $colorBorderForm;
+    margin-bottom: $Tweenty;
+    @media (max-width: $five-hundred-five){
+      width: $two-hundred-ninety;
     }
      select {
        outline: none;
       background: none;
-       width: 100%;
+       width: $one-hundred-percent;
      }
   }
   .saveBtn {
     outline: none;
-    width: 100px;
-    height: 30px;
+    width: $one-hundred;
+    height: $thirty;
     background: none;
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 40px;
+    border: 1px solid $colorBorderForm;
+    border-radius: $forty;
     text-transform: uppercase;
-    color: white;
-    margin-bottom: 10px;
+    color: $colorWhite;
+    margin-bottom: $ten;
   }
 }
 
 ::-webkit-scrollbar {
   background: #212121;
-  width: 10px;
+  width: $ten;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  background-color: rgba(255,255,255,0.5);
+  border-radius: $six;
+  background-color: $colorBorderForm;
 }

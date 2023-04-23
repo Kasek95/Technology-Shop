@@ -1,38 +1,41 @@
+@import "../sass/colors";
+@import "../sass/pixel";
+
 .shopCart {
       display: none;
       position: absolute;
       flex-direction: column;
-      top:100px;
+      top:$one-hundred;
       right: 0;
-      width: 300px;
+      width: $three-hundred;
       height: 100vh;
-      background-color: white;
-      border: 1px solid black;
+      background-color: $colorWhite;
+      border: 1px solid $black;
       z-index: 999;
-       @media (max-width: 321px) {
-         width: 100%;
+       @media (max-width: $three-hundred-tweenty-one) {
+         width: $one-hundred-percent;
        }
    .shopCartHeader {
      display: flex;
      align-items: center;
      justify-content: space-around;
-     width: 100%;
-     height: 50px;
-     border: 1px solid #ced4da;
+     width: $one-hundred-percent;
+     height: $fifty;
+     border: 1px solid $borderInShopLikedProducts;
       span {
         font-weight: 700;
-        padding-left: 10px;
+        padding-left: $ten;
       }
       .shopI {
-           color: black;
+           color: $black;
       }
       button {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 30px;
-        height: 30px;
-        border: 1px solid black;
+        width: $thirty;
+        height: $thirty;
+        border: 1px solid $black;
         background: none;
         border-radius: 50%;
         outline: none;
@@ -41,17 +44,17 @@
        position: absolute;
        bottom: 0;
        left: 0;
-       width: 100%;
+       width: $one-hundred-percent;
        .totalPrice {
          display: flex;
          flex-direction: column;
          span {
-           width: 100%;
-           background: linear-gradient(to right, #8e2de2, #4a00e0);
-           border: 1px solid #ced4da;
-           color: white;
+           width: $one-hundred-percent;
+           background: $backGrandColor;
+           border: 1px solid $borderInShopLikedProducts;
+           color: $colorWhite;
            text-transform: uppercase;
-           padding: 10px;
+           padding: $ten;
          }
        }
        button {
@@ -60,13 +63,13 @@
          align-items: center;
          text-transform: uppercase;
          border: none;
-         border-radius: 40px;
-         background: linear-gradient(to right, #8e2de2, #4a00e0);
-         color: white;
-         margin: 10px auto;
+         border-radius: $forty;
+         background: $backGrandColor;
+         color: $colorWhite;
+         margin: $ten auto;
          outline: none;
-         width: 200px;
-         height: 50px;
+         width: $two-hundred;
+         height: $fifty;
        }
      }
    }
@@ -74,74 +77,73 @@
      position: relative;
      display: flex;
      overflow: auto;
-     height:670px;
+     height:$six-hundred-seventy;
      flex-direction: column;
      align-items: center;
-     width: 100%;
+     width: $one-hundred-percent;
 
      .itemCard {
        position: relative;
-        width: 280px;
-        margin-top: 10px;
-        border: 1px solid #ced4da;
+        width: $two-hundred-eighty;
+        margin-top: $ten;
+        border: 1px solid $borderInShopLikedProducts;
        .deleteFromShop {
          position: absolute;
-         top: 10px;
-         right: 10px;
-         color: black;
+         top: $ten;
+         right: $ten;
+         color: $black;
          border-radius: 50%;
-         border: 1px solid black;
-         padding: 3px;
+         border: 1px solid $black;
+         padding: $three;
        }
         h3 {
-         margin: 10px;
+         margin: $ten;
         }
          .inputContainer {
            display: flex;
            justify-content: space-between;
            align-items: center;
-           margin-bottom: 10px;
+           margin-bottom: $ten;
             img{
-               width: 60px;
-               height: 60px;
+               width: $sixty;
+               height: $sixty;
                object-fit: contain;
-               margin-left: 10px;
+               margin-left: $ten;
             }
            .inputBox {
              position: relative;
-             margin-right: 30px;
+             margin-right: $thirty;
               .decrease {
                 position: absolute;
-                left: -19px;
+                left: -1.2rem;
                 outline: none;
-                background: linear-gradient(to right, #8e2de2, #4a00e0);
-                border: 1px solid #ced4da;
-                border-top-left-radius: 30px;
-                border-bottom-left-radius: 30px;
-                color: white;
-                height: 20px;
-                width: 20px;
+                background: $backGrandColor;
+                border: 1px solid $borderInShopLikedProducts;
+                border-top-left-radius: $thirty;
+                border-bottom-left-radius: $thirty;
+                color: $colorWhite;
+                height: $Tweenty;
+                width: $Tweenty;
               }
              .increase {
                position: absolute;
-               right: -19px;
                outline: none;
-                 background: linear-gradient(to right, #8e2de2, #4a00e0);
-                 border: 1px solid #ced4da;
-                  border-top-right-radius: 30px;
-                 border-bottom-right-radius: 30px;
-                 color: white;
-                 height: 20px;
-                 width: 20px;
+                 background: $backGrandColor;
+                 border: 1px solid $borderInShopLikedProducts;
+                  border-top-right-radius: $thirty;
+                 border-bottom-right-radius: $thirty;
+                 color: $colorWhite;
+                 height: $Tweenty;
+                 width: $Tweenty;
              }
               input {
                 border: 1px solid #ced4da;
-                background: linear-gradient(to right, #8e2de2, #4a00e0);
-                color: white;
+                background: $backGrandColor;
+                color: $colorWhite;
                 outline: none;
                 text-align: center;
-                width: 30px;
-                height: 20px;
+                width: $Tweenty;
+                height: $Tweenty;
               }
              input[type="number"]::-webkit-inner-spin-button {
                display: none;
@@ -152,25 +154,25 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 10px;
+          margin-bottom: $ten;
            button {
              outline: none;
              border: none;
-             background: linear-gradient(to right, #8e2de2, #4a00e0);
-             border-top-left-radius: 30px;
-             border-bottom-right-radius: 30px;
+             background: $backGrandColor;
+             border-top-left-radius: $thirty;
+             border-bottom-right-radius: $thirty;
              font-weight: bold;
              text-transform: uppercase;
-             margin-left: 10px ;
-             width: 130px;
-             height: 40px;
+             margin-left: $ten ;
+             width: $one-hundred-thirty;
+             height: $forty;
               a {
-                color: white;
+                color: $colorWhite;
                 text-decoration: none;
               }
            }
           span {
-            margin-right: 10px;
+            margin-right: $ten;
           }
         }
      }

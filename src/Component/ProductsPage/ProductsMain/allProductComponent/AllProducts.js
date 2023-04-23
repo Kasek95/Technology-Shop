@@ -6,7 +6,7 @@ const AllProducts = ({products,getProducts,likedProducts}) => {
     if(!products) return null
     return (
         <>
-            {products.map(product => (
+            {products.items.map(product => (
                 <SingielProduct product={product} getProducts={getProducts} likedProducts={likedProducts}/>
             ))}
         </>

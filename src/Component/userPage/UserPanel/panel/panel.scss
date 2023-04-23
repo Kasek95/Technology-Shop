@@ -1,72 +1,74 @@
+@import "../../../sass/colors";
+@import "../../../sass/pixel";
 .panel {
    display: flex;
   justify-content: center;
    align-items: center;
-   width: 100%;
-   height: 100%;
+   width: $one-hundred-percent;
+   height: $one-hundred-percent;
     .adminPanelContainer {
       display: flex;
       flex-direction: column;
-      min-height: 600px;
-      backdrop-filter: blur(15px);
-      border: 2px solid rgba(255,255,255,0.5);
+      min-height: $six-hundred;
+      backdrop-filter: blur($fifteen);
+      border: 2px solid $colorBorderForm;
       .headerPanel {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
-        height: 50px;
-        width: 100%;
-        border-bottom: 2px solid rgba(255,255,255,0.5);
+        height: $fifty;
+        width: $one-hundred-percent;
+        border-bottom: 2px solid $colorBorderForm;
          h3 {
-           color: white;
-           margin-left: 20px;
+           color: $colorWhite;
+           margin-left: $Tweenty;
          }
          button {
            background: none;
-           border:  2px solid rgba(255,255,255,0.5);
-           border-radius: 40px;
-           color: white;
+           border:  2px solid $colorBorderForm;
+           border-radius: $forty;
+           color: $colorWhite;
            text-transform: uppercase;
-           width: 100px;
-           height: 30px;
-           margin-right: 20px;
+           width: $one-hundred;
+           height: $thirty;
+           margin-right: $Tweenty;
          }
       }
       .adminPanel {
             display: flex;
-            height: 100%;
-            width: 100%;
-            @media (max-width: 768px) {
+            height: $one-hundred-percent;
+            width: $one-hundred-percent;
+            @media (max-width: $seven-hundred-sixty-eight) {
               display: flex;
               flex-direction: column;
             }
            .menuPanel {
              display: flex;
              flex-direction: column;
-             border-right: 2px solid rgba(255,255,255,0.5);
+             border-right: 2px solid $colorBorderForm;
              width: 20%;
-             min-height: 600px;
-             padding: 10px;
-              @media (max-width: 768px) {
-                width: 100%;
-                min-height: 60px;
+             min-height: $six-hundred;
+             padding: $ten;
+              @media (max-width: $seven-hundred-sixty-eight) {
+                width: $one-hundred-percent;
+                min-height: $sixty;
                 border-right: none;
-                border-bottom: 2px solid rgba(255,255,255,0.5);
+                border-bottom: 2px solid $colorBorderForm;
               }
               span {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                color: white;
-                width: 150px;
-                margin-bottom: 10px;
+                color: $colorWhite;
+                width: $one-hundred-fifty;
+                margin-bottom: $ten;
                  i {
-                   margin-left: 10px;
-                   color: rgba(255,255,255,0.5);
-                   border: 1px solid rgba(255,255,255,0.5);
+                   margin-left: $ten;
+                   color: $colorBorderForm;
+                   border: 1px solid $colorBorderForm;
                    border-radius:50%;
-                   padding: 3px;
+                   padding: $three;
                  }
 
               }
@@ -78,22 +80,22 @@
           justify-content: center;
           width: 70%;
           margin: 0 auto;
-          @media (max-width: 768px) {
-             min-height: 540px;
-             width: 100%;
+          @media (max-width: $seven-hundred-sixty-eight) {
+             min-height: $five-hundred-forty;
+             width: $one-hundred-percent;
            }
            .add_product_form {
              display: none;
-             @media (max-width: 520px) {
-               width: 100%;
+             @media (max-width: $five-hundred-tweenty) {
+               width: $one-hundred-percent;
              }
            }
            .remove_product {
              display: none;
              align-items: center;
              justify-content: center;
-             @media(max-width: 520px) {
-               width: 100%;
+             @media(max-width: $five-hundred-tweenty) {
+               width: $one-hundred-percent;
              }
 
            }

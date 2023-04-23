@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
 import supabase from "../../../../../supabase";
 import "./removeProducts.scss"
+import {getAllProducts} from "../../../../../features/listOfProduct";
+import {useDispatch, useSelector} from "react-redux";
 
 const RemoveProduct = ({setIsDisplay}) => {
-    const [products, setProducts] = useState()
     const [editProduct, setEditProduct] = useState({
         id: "",
         products_name: "",
@@ -15,6 +16,8 @@ const RemoveProduct = ({setIsDisplay}) => {
     })
     const [search,setSearch] = useState("")
     const [hide,setHide] = useState(false)
+    const product = useSelector((state)=>state.product.value)
+    const dispatch = useDispatch()
 
 
     useEffect(() => {
@@ -23,7 +26,8 @@ const RemoveProduct = ({setIsDisplay}) => {
 
     async function getProducts() {
         const { data } = await supabase.from("products").select();
-        setProducts(data);
+        dispatch(getAllProducts({items:data}))
+
     }
     async function getBase64ImageFromUrl(imageUrl) {
         const res = await fetch(imageUrl);
@@ -104,7 +108,7 @@ const RemoveProduct = ({setIsDisplay}) => {
         getProducts()
     }
 
-    if(!products) return null
+    if(!product.items) return null
 
     return (
         <>
@@ -112,7 +116,7 @@ const RemoveProduct = ({setIsDisplay}) => {
             <ul className={hide ? "remove-List hide": "remove-List"}>
                 <i onClick={() => setIsDisplay(false)} className="hideDeletePanel fa-solid fa-x"></i>
                 <input onChange={(e) => setSearch(e.target.value)} value={search} type={"text"} placeholder={"Search product"}/>
-                {products.filter(product => {
+                {product.items.filter(product => {
                         if(search === "") {
                             return product
                         }else if(product.products_name.toLowerCase().includes(search.toLowerCase())){

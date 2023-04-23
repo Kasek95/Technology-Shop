@@ -20,7 +20,7 @@ const Banner = () => {
                             <button className="banner-cta v2">Shop Now</button>
                         </div>
                     </div>
-                    <img className="banner-img" src={img1} />
+                    <img className="banner-img" src={img1} alt={"Słuchawki"}/>
                 </div>
             </section>
         </>

@@ -5,13 +5,20 @@ import phone from "../../assets/339077469_214418724564913_5637508898114760834_n.
 import headset from "../../assets/339071964_1275987013030099_1893502995452438114_n.png"
 import supabase from "../../../supabase";
 import ProductCard from "./ProductCard";
+import {useDispatch, useSelector} from "react-redux";
+import {getAllProducts} from "../../../features/listOfProduct";
+
 
 
 const Products = () => {
-    const [products, setProducts] = useState([])
     const [isDisplay,setIsDisplay] = useState(false)
     const [isDisplay2,setIsDisplay2] = useState(false)
     const [isDisplay3,setIsDisplay3] = useState(false)
+    const dispatch = useDispatch()
+    const products = useSelector((state)=>state.product.value)
+
+
+
 
 
 
@@ -38,16 +45,16 @@ const Products = () => {
 
     async function getProducts() {
         const { data } = await supabase.from("products").select();
-        setProducts(data);
+        dispatch(getAllProducts({items:data}))
     }
 
 
     const addLikedProduct = async (id) => {
 
-        setProducts(elm => elm.map(elem => {
-            return   elem.id === id ? {...elem , isLiked: !elem.isLiked} : elem
-        }))
-        let product = products.find(el => el.id === id)
+        // setProducts(elm => elm.map(elem => {
+        //     return   elem.id === id ? {...elem , isLiked: !elem.isLiked} : elem
+        // }))
+        let product = products.items.find(el => el.id === id)
         let liked = product.isLiked
 
         const {data,error} = await supabase.from("products")
@@ -56,10 +63,10 @@ const Products = () => {
             })
             .eq("id", id)
             getProducts()
-        window.location.reload();
+
     }
     const addToBasket = async (id) => {
-        let product = products.find(el => el.id === id)
+        let product = products.items.find(el => el.id === id)
         const {data, error}= await supabase
               .from("products")
               .update({
@@ -67,11 +74,10 @@ const Products = () => {
                   product_qty:  (product.product_qty + 1)
               })
               .eq("id", id)
-             window.location.reload()
             getProducts()
     }
 
-   if(!products) return  null
+   if(!products.items) return  null
     return (
         <>
             <section className={"products"}>
@@ -98,15 +104,15 @@ const Products = () => {
 
                     <article className={"singielProducts"}>
                         <section className={isDisplay3 ? "phoneProducts show" : "phoneProducts"}>
-                            {products
+                            {products.items
                                 .filter((el) => el.product_category === "Phone")
                                 .map((el) => (
-                                    <ProductCard el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
+                                    <ProductCard  el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
                                 ))}
                         </section>
 
                         <section className={isDisplay ? "monitorProducts show" : "monitorProducts"}>
-                            {products
+                            {products.items
                                 .filter(el => el.product_category === "Monitor")
                                 .map(el => (
                                     <ProductCard el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
@@ -115,7 +121,7 @@ const Products = () => {
                         </section>
 
                         <section className={isDisplay2 ? "head-seatProducts show" : "head-seatProducts"}>
-                            {products
+                            {products.items
                                 .filter(el => el.product_category === "Head-Set")
                                 .map(el => (
                                      <ProductCard el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>

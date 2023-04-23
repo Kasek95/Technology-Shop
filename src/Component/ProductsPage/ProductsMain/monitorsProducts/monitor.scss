@@ -1,26 +1,29 @@
+@import "../../../sass/colors";
+@import "../../../sass/pixel";
+
 .productCard {
    position: relative;
-   margin: 10px 20px;
-   border: 1px solid white;
+   margin: $ten $Tweenty;
+   border: 1px solid $colorWhite;
     .icon {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      color: white;
+      top: $ten;
+      right: $ten;
+      color: $colorWhite
     }
     .red {
-      color: red;
+      color: $red;
     }
    h3 {
-          margin: 10px;
+          margin: $ten;
    }
    .infoContainer {
      display: flex;
      align-items: start;
      justify-content: space-between;
-      width: 100%;
+      width: $one-hundred-percent;
 
-        @media (max-width: 768px) {
+        @media (max-width: $seven-hundred-sixty-eight) {
            flex-direction: column;
            align-items: center;
         }
@@ -29,90 +32,89 @@
          display: flex;
          align-items: center;
          justify-content: center;
-         width: 300px;
-         height: 300px;
-         background: radial-gradient(ellipse at center, rgba(87, 86, 86, 1.0), rgba(1, 1, 1, 1.0));
-          margin-left: 20px;
-          margin-right: 10px;
-          @media (max-width: 768px) {
-            margin: 0 auto;
-            width: 250px;
+         width: $three-hundred;
+         height: $three-hundred;
+         background: $cardBackGround;
+          margin-left: $Tweenty;
+          margin-right: $ten;
+          @media (max-width: $seven-hundred-sixty-eight) {
+            margin: $ten auto;
+            width: $two-hundred-fifty;
           }
            span {
              position: absolute;
              width: auto;
              height: auto;
-             bottom: 10px;
-             right: 5px;
+             bottom: $ten;
+             right: $five;
              font-size: 2rem;
-             color:white;
+             color:$colorWhite;
            }
           img {
-            width: 280px;
-            height: 280px;
+            width: $two-hundred-eighty;
+            height: $two-hundred-eighty;
             object-fit: contain;
-            @media (max-width: 768px) {
-
-              width: 230px;
+            @media (max-width: $seven-hundred-sixty-eight) {
+              width: $two-hundred-thirty;
             }
           }
        }
        span {
 
-         margin-right: 20px;
+         margin-right: $Tweenty;
          width: 60%;
-         height: 300px;
+         height: $three-hundred;
          overflow-x: auto;
-         @media (max-width: 768px) {
+         @media (max-width: $seven-hundred-sixty-eight) {
             text-align: center;
-            height: 200px;
-            width: 100%;
-            margin-bottom: 10px;
-            padding-left: 20px;
+            height: $two-hundred;
+            width: $one-hundred-percent;
+            margin-bottom: $ten;
+            padding-left: $Tweenty;
          }
        }
    }
   .OrderBox {
     display: flex;
-    gap: 30px;
-    margin:30px;
+    gap: $thirty;
+    margin:$thirty;
      .inputBox {
        position: relative;
        display: flex;
        .decrease {
          position: absolute;
-         left: -19px;
+         left: -$nine-ten;
          outline: none;
-         background: linear-gradient(to right, #8e2de2, #4a00e0);
-         border: 1px solid #ced4da;
-         border-top-left-radius: 30px;
-         border-bottom-left-radius: 30px;
-         color: white;
-         height: 40px;
-         width: 20px;
+         background: $backGrandColor;
+         border: 1px solid $borderInShopLikedProducts;
+         border-top-left-radius: $thirty;
+         border-bottom-left-radius: $thirty;
+         color: $colorWhite;
+         height: $forty;
+         width: $Tweenty;
        }
        .increase {
          position: absolute;
-         right: -19px;
+         right: -$nine-ten;
          outline: none;
-         background: linear-gradient(to right, #8e2de2, #4a00e0);
-         border: 1px solid #ced4da;
+         background: $backGrandColor;
+         border: 1px solid $borderInShopLikedProducts;
          border-left: unset;
-         border-top-right-radius: 30px;
-         border-bottom-right-radius: 30px;
-         color: white;
-         height: 40px;
-         width: 20px;
+         border-top-right-radius: $thirty;
+         border-bottom-right-radius: $thirty;
+         color: $colorWhite;
+         height: $forty;
+         width: $Tweenty;
        }
        input {
-         border-top: 1px solid #ced4da;
-         border-bottom: 1px solid #ced4da;
-         background: linear-gradient(to right, #8e2de2, #4a00e0);
-         color: white;
+         border-top: 1px solid $borderInShopLikedProducts;
+         border-bottom: 1px solid $borderInShopLikedProducts;
+         background: $backGrandColor;
+         color: $colorWhite;
          outline: none;
          text-align: center;
-         width: 30px;
-         height: 40px;
+         width: $thirty;
+         height: $forty;
        }
        input[type="number"]::-webkit-inner-spin-button {
          display: none;
@@ -121,15 +123,15 @@
      }
     .addToBasket{
       outline: none;
-      border: 1px solid white;
-      background: linear-gradient(to right, #8e2de2, #4a00e0);
-      border-top-left-radius: 30px;
-      border-bottom-right-radius: 30px;
+      border: 1px solid $colorWhite;
+      background: $backGrandColor;
+      border-top-left-radius: $thirty;
+      border-bottom-right-radius: $thirty;
       font-weight: bold;
       text-transform: uppercase;
-      margin-left: 10px;
-      width: 130px;
-      height: 40px;
+      margin-left: $ten;
+      width: $one-hundred-thirty;
+      height: $forty;
     }
   }
 

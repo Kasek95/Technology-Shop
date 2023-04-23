@@ -1,31 +1,35 @@
+@import "../../sass/colors";
+@import "../../sass/pixel";
+
 .searchList {
   position: fixed;
-  top: 55px;
-  min-height: 0px;
-  width: 300px;
-  border-radius: 5px;
-  margin-top: 10px;
+  top: $fifty-five;
+  min-height: 0;
+  width: $three-hundred;
+  border-radius: $five;
+  margin-top: $ten;
   overflow-x: clip;
-  background-color: #ffffff;
-   @media (max-width: 590px) {
-     top: 88px;
-     width: 100%;
+  background-color: $colorWhite;
+  z-index: 100;
+   @media (max-width: $five-hundred-ninety) {
+     top: $eighty-eight;
+     width: $one-hundred-percent;
    }
    .list-item {
      display: flex;
      justify-content: space-between;
      align-items: center;
-     width: 100%;
-     height: 40px;
+     width: $one-hundred-percent;
+     height: $forty;
      list-style: unset;
-     background-color: white;
+     background-color: $colorWhite;
       span {
-        margin-left: 10px;
+        margin-left: $ten;
       }
      img {
-         margin-right: 10px;
-         width: 30px;
-         height: 30px;
+         margin-right: $ten;
+         width: $thirty;
+         height: $thirty;
          object-fit: contain;
       }
    }

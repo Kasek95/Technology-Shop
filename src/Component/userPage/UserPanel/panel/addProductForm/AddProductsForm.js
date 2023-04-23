@@ -1,12 +1,24 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./addProductsForm.scss"
 import {Form,Formik} from "formik";
 import {addProductsValidation} from "./addProductsValidation";
 import supabase from "../../../../../supabase";
 import CustomInput from "../../RegistrationForm/CustomInput";
 import CustomSelect from "./customSelect/CustomSelect";
+import {getAllProducts} from "../../../../../features/listOfProduct";
+import {useDispatch} from "react-redux";
 
 const AddProductsForm = ({setIsDisplay2}) => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        getProducts();
+    }, []);
+
+    async function getProducts() {
+        const { data } = await supabase.from("products").select();
+        dispatch(getAllProducts({items:data}))
+    }
 
     async function getBase64ImageFromUrl(imageUrl) {
         const res = await fetch(imageUrl);
@@ -46,7 +58,7 @@ const AddProductsForm = ({setIsDisplay2}) => {
             products_year: values.products_year,
             product_category: values.products_category,
         });
-        console.log(values)
+        getProducts();
         actions.resetForm();
     };
 

@@ -1,13 +1,15 @@
+@import "../../sass/colors";
+@import "../../sass/pixel";
 .newsletter {
      display: flex;
    justify-content: center;
     align-items: center;
-  width: 100%;
-   height: 400px;
+  width: $one-hundred-percent;
+   height: $four-hundred;
    background-image: url("../../assets/newsletter-bg.jpeg");
    background-position: center;
    background-size: cover;
-   margin-top: 100px;
+   margin-top: $one-hundred;
     .newsLetterContent {
       display: flex;
       flex-direction: column;
@@ -15,63 +17,63 @@
       text-align: center;
          .small-text {
            color: rgba(0, 0, 0, 0.5);
-           margin-bottom: 15px;
+           margin-bottom: $fifteen;
            text-transform: uppercase;
            font-weight: bold;
          }
         .big-Text {
-          margin-bottom: 20px;
-          font-size: 22px;
-          line-height: 30px;
+          margin-bottom: $Tweenty;
+          font-size: $tweenty-two;
+          line-height: $thirty;
           font-weight: 500;
           text-transform: uppercase;
-          padding: 0 30px;
+          padding: 0 $thirty;
         }
         form {
           display: flex;
-          gap: 5px;
+          gap: $five;
           input {
-            width: 100%;
-            height: 40px;
+            width: $one-hundred-percent;
+            height: $forty;
             border-radius: 0;
             border: 1px solid rgba(0, 0, 0, 0.2);
-            padding: 0 12px;
-            font-size: 16px;
+            padding: 0 $twelve;
+            font-size: $sixteen;
             outline: none;
           }
           button {
             outline: 0;
             border: 0;
-            height: 40px;
-            width: 100px;
+            height: $forty;
+            width: $one-hundred;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 16px;
-            color: white;
+            font-size: $sixteen;
+            color: $colorWhite;
             background: #8e2de2;
             border-bottom: 3px solid #6516aa;
           }
         }
         .privace {
-          margin-top: 20px;
-          margin-bottom: 20px;
+          margin-top: $Tweenty;
+          margin-bottom: $Tweenty;
           font-size: 14px;
           color: rgba(0, 0, 0, 0.5);
         }
        .socialMediaContainer {
          display: flex;
-         gap: 10px;
+         gap: $ten;
           .icon {
-            width: 30px;
-            height: 30px;
+            width: $thirty;
+            height: $thirty;
             background: rgba(0, 0, 0, 0.8);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: $colorWhite;
             text-decoration: none;
           }
        }

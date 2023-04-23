@@ -22,6 +22,6 @@ export const addProductsValidation = yup.object().shape({
         .required("Set Pictures of products"),
     products_category: yup
         .string()
-        .oneOf(["Phone", "Monitor", "Head-set"], "Select category")
+        .oneOf(["Phone", "Monitor", "Head-Set"], "Select category")
         .required("Required"),
 });

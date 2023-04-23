@@ -1,70 +1,73 @@
+@import "../../sass/colors";
+@import "../../sass/pixel";
+
 .hero-banner {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: $one-hundred-percent;
   min-height: 100vh;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: $backGrandColor;
     .content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-           @media (max-width: 1025px) {
-             padding-top: 50px;
+           @media (max-width: $one-thousand-tweenty-five) {
+             padding-top: $fifty;
              flex-direction: column-reverse;
              align-items: center;
            }
-          @media (max-width: 580px) {
+          @media (max-width: $five-hundred-eighty) {
              justify-content: center;
           }
           .text-content {
-            color: white;
-            @media (max-width: 580px) {
-              width: 100%;
+            color: $colorWhite;
+            @media (max-width: $five-hundred-eighty) {
+              width: $one-hundred-percent;
             }
             h1 {
-              min-widt: 500px;
-              font-size: 180px;
-              @media (max-width: 580px) {
-                width: 100%;
-                font-size: 100px;
+              min-widt: $five-hundred;
+              font-size: $one-hundred-eighty;
+              @media (max-width: $five-hundred-eighty) {
+                width: $one-hundred-percent;
+                font-size: $one-hundred;
                 text-align: center;
               }
 
             }
             p {
-              max-width: 500px;
-              font-size: 18px;
-              @media (max-width: 580px) {
+              max-width: $five-hundred;
+              font-size: $eight-ten;
+              @media (max-width: $five-hundred-eighty) {
                 text-align: center;
-                width: 100%;
+                width: $one-hundred-percent;
               }
             }
           }
           .ctas {
              display: flex;
-             color: white;
+             color: $colorWhite;
              justify-content: center;
-             gap: 20px;
-             max-width: 500px;
-              margin-bottom: 40px;
+             gap: $Tweenty;
+             max-width: $five-hundred;
+              margin-bottom: $forty;
               .banner-cta {
                 background: none;
-                border: 1px solid white;
-                border-radius: 10px;
-                color: white;
+                border: 1px solid $colorWhite;
+                border-radius: $ten;
+                color: $colorWhite;
                 cursor: pointer;
-                margin-top: 20px;
-                padding: 5px 10px;
+                margin-top: $Tweenty;
+                padding: $five $ten;
               }
           }
         img {
-          height: 100%;
-          width: 500px;
+          height: $one-hundred-percent;
+          width: $five-hundred;
           object-fit: contain;
-            @media (max-width: 580px) {
-              margin-bottom: 100px;
-              height: 400px;
-              width: 100%;
+            @media (max-width: $five-hundred-eighty) {
+              margin-bottom: $one-hundred;
+              height: $four-hundred;
+              width: $one-hundred-percent;
             }
         }
     }

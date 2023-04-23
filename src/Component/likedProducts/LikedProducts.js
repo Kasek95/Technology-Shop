@@ -1,14 +1,16 @@
 import React, {useState} from "react";
 import "./likedProducts.scss"
 import supabase from "../../supabase";
+import {useSelector} from "react-redux";
 
 
-const LikedProducts = ({isDisplay2,setIsDisplay2, products,getProducts}) => {
+const LikedProducts = ({isDisplay2,setIsDisplay2, getProducts}) => {
 
+    const product = useSelector((state)=>state.product.value)
 
     const removeLike = async (id) => {
-         let product = products.find(el => el.id == id)
-         let liked = !product.isLiked
+         let x = product.items.find(el => el.id == id)
+         let liked = !x.isLiked
          const {data,error} = await supabase.from("products")
             .update({
                 isLiked: liked
@@ -18,19 +20,19 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, products,getProducts}) => {
     }
 
     const addToBasket = async (id) => {
-        let product = products.find(el => el.id === id)
+        let x = product.items.find(el => el.id === id)
         const {data, error}= await supabase
             .from("products")
             .update({
                 inShop: true,
-                product_qty: product.product_qty + 1
+                product_qty: x.product_qty + 1
             })
             .eq("id", id)
         getProducts()
     }
 
 
-    if(!products) return null
+    if(!product.items) return null
     return (
         <>
            <section className={isDisplay2 ? "likedProducts show" : "likedProducts"}>
@@ -40,7 +42,7 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, products,getProducts}) => {
               </div>
 
                <ul className={"listOfLiked"}>
-                   {products.filter(item => item.isLiked === true)
+                   {product.items.filter(item => item.isLiked === true)
                        .map(item => (
                            <li className={"singielItem"} key={item.id}>
                                <i  onClick={() => removeLike(item.id)} className="fa-solid fa-x"></i>

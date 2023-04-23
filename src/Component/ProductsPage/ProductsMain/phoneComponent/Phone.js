@@ -6,7 +6,7 @@ const Phone = ({products,getProducts, likedProducts}) => {
 
     return (
         <>
-            {products.filter(product => product.product_category === "Phone")
+            {products.items.filter(product => product.product_category === "Phone")
                 .map(product => (
                     <CardPhone product={product} getProducts={getProducts} likedProducts={likedProducts}/>
                 ))

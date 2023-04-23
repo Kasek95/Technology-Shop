@@ -4,7 +4,9 @@ import Shop from "../shop/Shop";
 import LikedProducts from "../likedProducts/LikedProducts";
 import SearchBar from "./searchBarFilter/SearchBar";
 import "./header.scss"
+import {useSelector,useDispatch} from "react-redux";
 import supabase from "../../supabase";
+import {getAllProducts} from "../../features/listOfProduct";
 
 
 const Header = () => {
@@ -12,9 +14,9 @@ const Header = () => {
     const [isDisplay2, setIsDisplay2] = useState(false)
     const [basket, setBasket] = useState(false)
     const [searchProducts, setSearchProducts] = useState("")
-    const [products,setProducts] = useState([])
 
-
+    const product = useSelector((state)=>state.product.value)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         getProducts();
@@ -22,7 +24,7 @@ const Header = () => {
 
     async function getProducts() {
         const { data } = await supabase.from("products").select();
-        setProducts(data);
+        dispatch(getAllProducts({items:data}))
     }
 
     const setShow = (item) => {
@@ -31,12 +33,12 @@ const Header = () => {
     const setLikesClose = (item) => {
         setIsDisplay2(item)
     }
-    let inShop = products.filter(item => item.inShop === true)
+    let inShop = product.items.filter(item => item.inShop === true)
     let sumOfProducts = inShop.map(el => el.product_qty * 1)
 
 
 
-  if(!products) return null
+  if(!product.items) return null
     return (
         <>
 
@@ -60,7 +62,7 @@ const Header = () => {
                                    placeholder={"Search Products"}/>
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <SearchBar search={searchProducts} products={products}/>
+                        <SearchBar search={searchProducts} products={product.items}/>
                     </section>
 
                     <section className={"interface"}>
@@ -71,7 +73,7 @@ const Header = () => {
                         </section>
                         <section  className={"shop"}>
 
-                                 {products.filter(item => item.inShop === true).length === 0 ? null :
+                                 {product.items.filter(item => item.inShop === true).length === 0 ? null :
                                     <div className={"productsInShop"}>
                                         <span>{sumOfProducts.reduce((a,b)=> a+b)}</span>
                                     </div>
@@ -85,9 +87,9 @@ const Header = () => {
                                className="fa-regular fa-heart"
                             >
                             </i>
-                            {products.filter(el => el.isLiked === true).length === 0 ? null :
+                            {product.items.filter(el => el.isLiked === true).length === 0 ? null :
                                 <div className={"productsCounter"}>
-                                    <span>{products.filter(el => el.isLiked === true).length}</span>
+                                    <span>{product.items.filter(el => el.isLiked === true).length}</span>
                                 </div>
                             }
 
@@ -96,7 +98,7 @@ const Header = () => {
                 </section>
                 <LikedProducts
                     getProducts={getProducts}
-                    products={products}
+                    products={product}
                     isDisplay2={isDisplay2}
                     setIsDisplay2={setLikesClose}
                 />
@@ -104,7 +106,7 @@ const Header = () => {
                     getProducts={getProducts}
                     basket={basket}
                     setBasket={setShow}
-                    products={products}
+                    products={product}
                     sumOfProducts={sumOfProducts}
                 />
             </header>

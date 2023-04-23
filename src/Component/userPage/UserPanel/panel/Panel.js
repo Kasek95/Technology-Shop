@@ -1,12 +1,16 @@
 import React,{useState} from "react";
 import AddProductsForm from "./addProductForm/AddProductsForm";
 import RemoveProduct from "./removeProduct/RemoveProduct";
+import {useDispatch} from "react-redux";
+import {login} from "../../../../features/user"
 import supabase from "../../../../supabase";
 import "./panel.scss"
-const Panel = ({getUser}) => {
+const Panel = () => {
+     const dispatch = useDispatch()
      const [isDisplay, setIsDisplay] = useState(false)
      const [isDisplay2, setIsDisplay2] = useState(false)
-     const hideAddProduct = (parm)  => {
+
+    const hideAddProduct = (parm)  => {
          setIsDisplay2(parm)
      }
      const hideRemoveProduct = (parm) => {
@@ -24,7 +28,7 @@ const Panel = ({getUser}) => {
 
     const logOut = async () => {
         await supabase.auth.signOut();
-        getUser(null)
+        dispatch(login({user:null}))
     }
 
     return (

@@ -1,68 +1,144 @@
+@import "../../sass/colors";
+@import "../../sass/pixel";
+
 .products-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: $one-hundred-percent;
   min-height: 100vh;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: $backGrandColor;
    .allProducts {
      display: flex;
-     height: 700px;
-     border: 1px solid black;
-      @media (max-width: 768px) {
+     height: $seven-hundred;
+     border: 1px solid $black;
+      @media (max-width: $seven-hundred-sixty-eight) {
         flex-direction: column;
       }
      .categoryOfProducts {
         display: flex;
         flex-direction: column;
-        padding-top: 30px;
+        padding-top: $thirty;
         width: 20%;
-        border-right: 1px solid black;
-        height: 100% ;
-       @media (max-width: 768px) {
+        border-right: 1px solid $black;
+        height: $one-hundred-percent;
+       @media (max-width: $seven-hundred-sixty-eight) {
          align-items: center;
          justify-content: center;
          flex-direction: unset;
          border-right: unset;
-         border-bottom: 1px solid black;
-         height: 70px;
-         width: 100%;
+         border-bottom: 1px solid $black;
+         height: $seventy;
+         width: $one-hundred-percent;
        }
         span {
-          margin-left: 20px;
-          margin-bottom: 20px;
-          @media (max-width: 768px) {
-            margin-left: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          height: 100px;
+          position: relative;
+          color: $colorWhite;
+          margin-right: $Tweenty;
+          margin-left: $Tweenty;
+          margin-bottom: $Tweenty;
+          padding: 0 $Tweenty;
+          background-color: #020223;
+          box-shadow:0 $Tweenty $thirty-five rgba(0,0,0,0.3);
+          z-index: 999;
+          @media (max-width: $seven-hundred-sixty-eight) {
+            margin-left: $ten;
+            height: 50px;
+            margin-right: unset;
+
           }
         }
+       span::before {
+         content: '';
+         position: absolute;
+         width: 200%;
+         height: 200%;
+         background: conic-gradient(from 90deg, rgb(0 0 0 / 0%) 70%, rgb(11 78 230 / 9%)80%, rgb(0, 220, 255) 100%);
+         left: -60%;
+         top: -55%;
+         z-index: -3;
+         animation: rotate 3s linear infinite;
+         @media (max-width: $seven-hundred-sixty-eight) {
+           left: -50%;
+
+         }
+       }
+
+       span::after {
+         content: "";
+         position: absolute;
+         width: 90%;
+         height: 84%;
+         background: $backGrandColor;
+         top: 8px;
+         right: 9.5px;
+         z-index: -1;
+         @media (max-width: $seven-hundred-sixty-eight) {
+           top: 3.5px;
+           right: 5.5px;
+         }
+         @media (max-width: $three-hundred-tweenty-one){
+           right: 3.9px;
+         }
+         @media (min-width: 768px) and (max-width: 1024px){
+           right: 6px;
+         }
+         @media (min-width: 321px) and (max-width: 425px) {
+           right: 4px;
+         }
+
+       }
+
+
+       //span:hover {
+       //  animation: rotate 4s infinite ease-in-out;
+       //}
 
      }
        .singielProductsCategory {
          display: flex;
          overflow-x: auto;
-         width: 100%;
-         height: 100%;
+         width: $one-hundred-percent;
+         height: $one-hundred-percent;
            .allCategorys {
              display: flex;
              flex-direction: column;
              overflow-x: auto;
            }
            .singielCategoryMonitor {
-             display: none;
+             display: flex;
              flex-direction: column;
              overflow-x: auto;
 
            }
           .singielCategoryHead-Set {
-            display: none;
+            display: flex;
             flex-direction: column;
             overflow-x: auto;
           }
           .singielCategoryPhone {
-            display: none;
+            display: flex;
             flex-direction: column;
             overflow-x: auto;
           }
+         .hide {
+           display: none;
+         }
+
        }
    }
+
+}
+@keyframes rotate {
+ 0% {
+  transform: rotate(0);
+}
+  100% {
+    transform: rotate(360deg);
+  }
 }

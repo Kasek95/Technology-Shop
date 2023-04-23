@@ -1,11 +1,13 @@
 @import "src/Component/sass/_mixin.scss";
+@import "../../sass/pixel";
+@import "../../sass/colors";
 
 .products {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: $one-hundred-percent;
 
   .products-container {
 
@@ -14,12 +16,12 @@
       flex-wrap: wrap;
       align-content: space-between;
       justify-content: space-between;
-      margin-top: 80px;
+      margin-top: $eighty;
 
       .monitor {
         overflow: hidden;
-        @media (max-width: 619px) {
-          width: 100%;
+        @media (max-width: $six-hundred-sixteen) {
+          width: $one-hundred-percent;
         }
       }
         img{
@@ -32,8 +34,8 @@
       }
       .head-seat {
           overflow: hidden;
-        @media (max-width: 619px) {
-          width: 100%;
+        @media (max-width: $six-hundred-sixteen) {
+          width: $one-hundred-percent;
         }
         img{
           transition: all ease 0.5s;
@@ -44,8 +46,8 @@
       }
       .phone {
         overflow: hidden;
-        @media (max-width: 920px) {
-          width: 100%;
+        @media (max-width: $nine-hundred-tweenty) {
+          width: $one-hundred-percent;
         }
        img{
          transition: all ease 0.5s;
@@ -56,42 +58,42 @@
       }
     }
     .showProducts {
-      margin-top: 50px;
+      margin-top: $fifty;
 
       h2 {
-        font-size: 24px;
+        font-size: $tweenty-four;
         text-transform: uppercase;
-        margin-bottom: 10px;
+        margin-bottom: $ten;
       }
 
       .border-bottom {
-        width: 50px;
-        height: 3px;
+        width: $fifty;
+        height: $three;
         background-color: #8e2de2;
-        margin-bottom: 40px;
+        margin-bottom: $forty;
 
       }
 
       .singielProducts {
-        width: 100%;
+        width: $one-hundred-percent;
 
         .phoneProducts {
           display: none;
           justify-content: space-evenly;
           flex-wrap: wrap;
-          width: 100%;
+          width: $one-hundred-percent;
         }
         .monitorProducts {
           display: none;
           flex-wrap: wrap;
           justify-content: space-evenly;
-          width: 100%;
+          width: $one-hundred-percent;
         }
         .head-seatProducts {
           display: none;
           flex-wrap: wrap;
           justify-content: space-evenly;
-          width: 100%;
+          width: $one-hundred-percent;
         }
         .show {
           display: flex;
@@ -100,7 +102,7 @@
           display: none;
         }
         .red {
-          color: red;
+          color: $red;
         }
       }
     }
