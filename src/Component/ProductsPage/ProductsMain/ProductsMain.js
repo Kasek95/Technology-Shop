@@ -11,7 +11,6 @@ import {getAllProducts} from "../../../features/listOfProduct";
 
 const ProductsMain = () => {
     const [searchParams, setSearchParams] = useSearchParams();
-    const [products, setProducts] = useState();
     const [displayAllProduct,setDisplayAllProduct] =useState(false);
     const [showMonitors,setShowMonitors] = useState(false);
     const [showPhones,setShowPhones] = useState(false);
@@ -26,6 +25,8 @@ const ProductsMain = () => {
        setShowMonitors(true)
        setShowPhones(false)
        setShowHeadSet(false)
+       setSearchParams({type: 'Monitor'});
+
    }
 
     const showAll = () => {
@@ -33,21 +34,39 @@ const ProductsMain = () => {
         setShowMonitors(false)
         setShowPhones(false)
         setShowHeadSet(false)
+        searchParams.delete('type')
     }
     const showPhone = () => {
         setDisplayAllProduct(true)
         setShowMonitors(false)
         setShowPhones(true)
         setShowHeadSet(false)
+        setSearchParams({type: 'Phone'});
     }
     const showHead = () => {
         setDisplayAllProduct(true)
         setShowMonitors(false)
         setShowPhones(false)
         setShowHeadSet(true)
+        setSearchParams({type: 'Head-Set'});
+
     }
 
-
+    useEffect(() => {
+        switch (searchParams.get('type')) {
+            case 'Monitor':
+                showMonitor()
+                break;
+            case 'Phone':
+                showPhone()
+                break;
+            case 'Head-Set':
+                showHead()
+                break;
+            default:
+                showAll()
+        }
+    }, [searchParams]);
 
     useEffect(() => {
         getProducts();
@@ -72,7 +91,7 @@ const ProductsMain = () => {
     }
 
 
-    if(!product.items) return  null
+    if(!product) return  null
     return (
         <>
           <main className={"products-main"}>

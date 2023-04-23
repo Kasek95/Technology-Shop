@@ -1,6 +1,7 @@
 import "./searchBar.scss"
 import React, {useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 const SearchBar = ({search,products}) => {
@@ -23,10 +24,10 @@ const SearchBar = ({search,products}) => {
                              }
                          }).map(product=>
 
-                             search === "" ? null : <li key={product.id} className={"list-item"} onClick={() => handleClick(product.product_category)}>
+                             search === "" ? null : <Link to={`/products?type=${product.product_category}`} key={product.id} className={"list-item"} onClick={() => handleClick(product.product_category)}>
                                  <span>{product.products_name}</span>
                                  <img src={product.products_img}/>
-                             </li>
+                             </Link>
 
                          )
                      }
