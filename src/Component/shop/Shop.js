@@ -68,7 +68,7 @@ const Shop = ({basket,setBasket,sumOfProducts, getProducts}) => {
                 }
             </div>
             <section className={"shopSingielItem"}>
-                {product.items.filter(el => el.inShop === true).length === 0 ? <EmptyShop/> :
+                {product.items.filter(el => el.inShop === true).length === 0 ? <EmptyShop setBasket={setBasket}/> :
                  product.items.filter(product => product.inShop === true)
                      .map(product => (
                          <article key={product.id} className={"itemCard"}>
