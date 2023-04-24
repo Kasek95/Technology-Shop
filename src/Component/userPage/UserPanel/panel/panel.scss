@@ -80,6 +80,11 @@
           justify-content: center;
           width: 70%;
           margin: 0 auto;
+           h2 {
+             text-align: center;
+             font-size: $thirty-five;
+             color: $colorWhite;
+           }
           @media (max-width: $seven-hundred-sixty-eight) {
              min-height: $five-hundred-forty;
              width: $one-hundred-percent;

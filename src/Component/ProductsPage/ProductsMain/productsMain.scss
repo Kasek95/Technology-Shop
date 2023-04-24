@@ -11,7 +11,7 @@
    .allProducts {
      display: flex;
      height: $seven-hundred;
-     border: 1px solid $black;
+     border: 1px solid $colorWhite;
       @media (max-width: $seven-hundred-sixty-eight) {
         flex-direction: column;
       }
@@ -20,14 +20,14 @@
         flex-direction: column;
         padding-top: $thirty;
         width: 20%;
-        border-right: 1px solid $black;
+        border-right: 1px solid $colorWhite;
         height: $one-hundred-percent;
        @media (max-width: $seven-hundred-sixty-eight) {
          align-items: center;
          justify-content: center;
          flex-direction: unset;
          border-right: unset;
-         border-bottom: 1px solid $black;
+         border-bottom: 1px solid $colorWhite;
          height: $seventy;
          width: $one-hundred-percent;
        }
@@ -37,7 +37,8 @@
           justify-content: center;
           align-items: center;
           overflow: hidden;
-          height: $one-hundred;
+          height: $forty;
+          border-radius: $forty;
           color: $colorWhite;
           margin-right: $Tweenty;
           margin-left: $Tweenty;
@@ -67,9 +68,11 @@
        span::after {
          content: "";
          position: absolute;
-         inset: 4px;
+         border-radius: $forty;
+         inset: 1px;
          background: $backGrandColor;
          z-index: -1;
+         box-shadow:inset $Tweenty $Tweenty $Tweenty #0000008c;
        }
 
 

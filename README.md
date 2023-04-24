@@ -1,7 +1,7 @@
 
 # Technology Shop
 
-It is a small online store that has products such as "headphones, phones, monitors. 
+It is a small online store that has products such as headphones, phones, monitors. 
 You can add products to the cart, delete, like, and you have access to the admin panel that can delete, add and edit products!.
 And we have a search bar where you can enter the product and whether we have it in stock.
 
@@ -19,7 +19,7 @@ To run this project, install it locally using npm:
 
 ```
 1. Download repository to your desktop.
-2.Open the repository in your code editor.
+2. Open the repository in your code editor.
 3. In terminal write npm install
 4. Next write npm start .
 ```
@@ -35,7 +35,7 @@ You can see each category products when u click each card above Popular Products
 
 Products Page 
 
-![productsPage](https://user-images.githubusercontent.com/114489977/233866875-8d372551-23b7-4a7b-b2df-bd854c89734a.png)
+![productsPage](https://user-images.githubusercontent.com/114489977/233894331-c0b673f2-c0be-4b21-958c-bb110ed84e98.png)
 
 Admin Page: 
 

@@ -45,6 +45,7 @@ const Panel = () => {
                                <span onClick={setDeletePanel} >Remove Product <i className="fa-solid fa-minus"></i></span>
                            </div>
                            <article className={"actions"}>
+                               {isDisplay || isDisplay2 === true ? null : <h2>Welcome in panel Admin!</h2> }
                                <section className={isDisplay2 ? "add_product_form show" : "add_product_form"}>
                                   <AddProductsForm setIsDisplay2={hideAddProduct}/>
                                </section>

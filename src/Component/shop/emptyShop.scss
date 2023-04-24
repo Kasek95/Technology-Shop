@@ -1,0 +1,21 @@
+@import "../sass/colors";
+@import "../sass/pixel";
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $one-hundred-percent;
+  h3 {
+    margin: $Tweenty $Tweenty;
+    text-align: center;
+    font-size: $tweenty-five;
+  }
+  a {
+    border-radius: $forty;
+    text-transform: uppercase;
+    color: $colorWhite;
+    padding: $ten;
+    text-decoration: none;
+    background: $backGrandColor;
+  }
+}
