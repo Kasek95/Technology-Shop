@@ -1,14 +1,17 @@
 import React, {useState} from "react";
 import "./likedProducts.scss"
 import supabase from "../../supabase";
-import {useSelector} from "react-redux";
+import {updateIsLiked,updateInShop} from "../../features/listOfProduct";
+import {useSelector,useDispatch} from "react-redux";
 
 
 const LikedProducts = ({isDisplay2,setIsDisplay2, getProducts}) => {
 
     const product = useSelector((state)=>state.product.value)
+    const dispatch = useDispatch()
 
     const removeLike = async (id) => {
+         dispatch(updateIsLiked(id))
          let x = product.items.find(el => el.id == id)
          let liked = !x.isLiked
          const {data,error} = await supabase.from("products")
@@ -20,6 +23,7 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, getProducts}) => {
     }
 
     const addToBasket = async (id) => {
+        dispatch(updateInShop(id))
         let x = product.items.find(el => el.id === id)
         const {data, error}= await supabase
             .from("products")

@@ -3,7 +3,8 @@ import "./shop.scss"
 import EmptyShop from "./EmptyShop";
 import {Link} from "react-router-dom";
 import supabase from "../../supabase";
-import {useSelector} from "react-redux";
+import {useSelector,useDispatch} from "react-redux";
+import {updateQtyPlus, deleteFromShop,decreaseProductQty} from "../../features/listOfProduct";
 
 
 const Shop = ({basket,setBasket,sumOfProducts, getProducts}) => {
@@ -11,8 +12,11 @@ const Shop = ({basket,setBasket,sumOfProducts, getProducts}) => {
         const sumOfPrices = product.items.filter(item => item.inShop === true);
         const totalSum = sumOfPrices.map(item => item.products_price * item.product_qty)
 
+        const dispatch = useDispatch();
+
 
         const increaseProduct = async (id) => {
+            dispatch(updateQtyPlus(id))
             const findProducts = product.items.find(el => el.id === id)
 
             const {data, error}= await supabase
@@ -21,10 +25,12 @@ const Shop = ({basket,setBasket,sumOfProducts, getProducts}) => {
                     product_qty: findProducts.product_qty + 1
                 })
                 .eq("id", id)
-                getProducts()
+            getProducts()
+
         }
 
         const decreaseProduct = async(id) => {
+            dispatch(decreaseProductQty(id))
             const findProducts = product.items.find(el => el.id === id)
 
             const {data, error}= await supabase
@@ -34,9 +40,11 @@ const Shop = ({basket,setBasket,sumOfProducts, getProducts}) => {
                 })
                 .eq("id", id)
              getProducts()
+
         }
 
         const removeFromShop = async (id) => {
+            dispatch(deleteFromShop(id))
             const {data, error}= await supabase
                 .from("products")
                 .update({
@@ -45,6 +53,7 @@ const Shop = ({basket,setBasket,sumOfProducts, getProducts}) => {
                 })
                 .eq("id", id)
             getProducts()
+
         }
 
 

@@ -6,8 +6,9 @@ import headset from "../../assets/339071964_1275987013030099_1893502995452438114
 import supabase from "../../../supabase";
 import ProductCard from "./ProductCard";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllProducts} from "../../../features/listOfProduct";
+import {getAllProducts,updateIsLiked, updateInShop} from "../../../features/listOfProduct";
 
+//tanstack query
 
 
 const Products = () => {
@@ -51,10 +52,7 @@ const Products = () => {
 
 
     const addLikedProduct = async (id) => {
-
-        // setProducts(elm => elm.map(elem => {
-        //     return   elem.id === id ? {...elem , isLiked: !elem.isLiked} : elem
-        // }))
+        dispatch(updateIsLiked(id))
         let product = products.items.find(el => el.id === id)
         let liked = product.isLiked
 
@@ -64,9 +62,9 @@ const Products = () => {
             })
             .eq("id", id)
             getProducts()
-
     }
     const addToBasket = async (id) => {
+        dispatch(updateInShop(id))
         let product = products.items.find(el => el.id === id)
         const {data, error}= await supabase
               .from("products")
@@ -75,7 +73,7 @@ const Products = () => {
                   product_qty:  (product.product_qty + 1)
               })
               .eq("id", id)
-            getProducts()
+        getProducts();
     }
 
    if(!products.items) return  null

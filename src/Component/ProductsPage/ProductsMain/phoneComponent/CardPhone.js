@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import supabase from "../../../../supabase";
+import {useDispatch} from "react-redux";
 
 const CardPhone = ({product,getProducts,likedProducts}) =>{
      const [counter,setCounter] = useState(1)
+    const dispatch = useDispatch()
 
     const addToBasket = async () => {
-
 
         const {data, error} = await supabase
             .from("products")

@@ -7,7 +7,7 @@ import HeadSet from "./head-set/Head-Set";
 import Phone from "./phoneComponent/Phone";
 import {useSearchParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllProducts} from "../../../features/listOfProduct";
+import {getAllProducts,updateIsLiked} from "../../../features/listOfProduct";
 
 const ProductsMain = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -79,6 +79,7 @@ const ProductsMain = () => {
     }
 
     const likeProducts = async (id)=> {
+        dispatch(updateIsLiked(id))
         const findProducts = product.items.find(el => el.id === id)
         const {data,error} = await supabase
             .from("products")
