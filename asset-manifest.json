@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Technology-Shop/static/css/main.35761482.css",
-    "main.js": "/Technology-Shop/static/js/main.e228a610.js",
+    "main.css": "/Technology-Shop/static/css/main.4a3e25f8.css",
+    "main.js": "/Technology-Shop/static/js/main.819dcf00.js",
     "static/media/Register Back ground.jpg": "/Technology-Shop/static/media/Register Back ground.fcc1c1d2c785b42d9827.jpg",
     "static/media/banner-img.png": "/Technology-Shop/static/media/banner-img.0412d66280a0273effa2.png",
     "static/media/newsletter-bg.jpeg": "/Technology-Shop/static/media/newsletter-bg.b6f22313149bdbb35069.jpeg",
@@ -9,11 +9,11 @@
     "static/media/339071964___n.png": "/Technology-Shop/static/media/339071964_1275987013030099_1893502995452438114_n.02f42f2baa4e1cf6161d.png",
     "static/media/339077469_214418724564913__n.png": "/Technology-Shop/static/media/339077469_214418724564913_5637508898114760834_n.befe365b2f535b736ebe.png",
     "index.html": "/Technology-Shop/index.html",
-    "main.35761482.css.map": "/Technology-Shop/static/css/main.35761482.css.map",
-    "main.e228a610.js.map": "/Technology-Shop/static/js/main.e228a610.js.map"
+    "main.4a3e25f8.css.map": "/Technology-Shop/static/css/main.4a3e25f8.css.map",
+    "main.819dcf00.js.map": "/Technology-Shop/static/js/main.819dcf00.js.map"
   },
   "entrypoints": [
-    "static/css/main.35761482.css",
-    "static/js/main.e228a610.js"
+    "static/css/main.4a3e25f8.css",
+    "static/js/main.819dcf00.js"
   ]
 }
