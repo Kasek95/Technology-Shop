@@ -69,7 +69,9 @@ const SingielProductMain = ({getProducts,getOpinion}) => {
         getProducts()
         actions.resetForm()
         setIsDisplay(false)
-
+    }
+    const closeForm = () => {
+        setIsDisplay(false)
 
     }
 
@@ -129,7 +131,7 @@ const SingielProductMain = ({getProducts,getOpinion}) => {
                            >
                                {({ isSubmitting }) => (
                                    <Form className={"form"}>
-                                          <button onClick={()=> setIsDisplay(false)} className={"closeForm"}>X</button>
+                                          <button type={"reset"} onClick={closeForm}  className={"closeForm"}>X</button>
                                            <div className={"input"}>
                                                <CustomInput
                                                 label={"Username"}
