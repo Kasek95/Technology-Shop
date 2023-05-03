@@ -95,7 +95,7 @@ const Shop = ({basket,setBasket,sumOfProducts, getProducts}) => {
 
                              <div className={"price"}>
                                  <button onClick={() => setBasket(false)}><Link to={"/"}>Back To Shoping</Link></button>
-                                 <span><strong>Price</strong>: {product.product_qty * product.products_price}$</span>
+                                 <span><strong>Price</strong>: {(product.product_qty * product.products_price).toFixed(2)}$</span>
                              </div>
                          </article>
                      ))

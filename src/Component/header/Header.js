@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, Outlet} from "react-router-dom";
+import {Link, Outlet, useParams} from "react-router-dom";
 import Shop from "../shop/Shop";
 import LikedProducts from "../likedProducts/LikedProducts";
 import SearchBar from "./searchBarFilter/SearchBar";
@@ -9,14 +9,18 @@ import supabase from "../../supabase";
 import {getAllProducts} from "../../features/listOfProduct";
 
 
+
 const Header = () => {
     const [isDisplay, setIsDisplay ] = useState(false)
     const [isDisplay2, setIsDisplay2] = useState(false)
     const [basket, setBasket] = useState(false)
     const [searchProducts, setSearchProducts] = useState("")
-
     const product = useSelector((state)=>state.product.value)
     const dispatch = useDispatch()
+    const setSearch = () => {
+        setSearchProducts("")
+    }
+
 
     useEffect(() => {
         getProducts();
@@ -70,7 +74,7 @@ const Header = () => {
                                    placeholder={"Search Products"}/>
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <SearchBar search={searchProducts} products={product.items}/>
+                        <SearchBar setSearch={setSearch} search={searchProducts} products={product.items}/>
                     </section>
 
                     <section className={"interface"}>
