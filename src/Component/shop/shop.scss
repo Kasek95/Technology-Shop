@@ -12,6 +12,7 @@
       background-color: $colorWhite;
       border: 1px solid $black;
       z-index: 999;
+      animation: x 2s ease;
        @media (max-width: $three-hundred-tweenty-one) {
          width: $one-hundred-percent;
        }
@@ -183,4 +184,15 @@
 }
 .show {
   display: flex;
+}
+
+@keyframes x{
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

@@ -11,7 +11,7 @@
   background-color: $colorWhite;
   border: 1px solid $black;
   flex-direction: column;
-
+  animation: x 2s ease-in;
   z-index: 999;
   @media (max-width: $three-hundred-tweenty-one) {
     width: $one-hundred-percent;
