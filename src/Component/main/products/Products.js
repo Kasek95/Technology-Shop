@@ -104,7 +104,7 @@ const Products = () => {
                     <article className={"singielProducts"}>
                         <section className={isDisplay3 ? "phoneProducts show" : "phoneProducts"}>
                             {products.items
-                                .filter((el) => el.product_category === "Phone")
+                                .filter((el) => el.product_category === "Phone" && el.popular === true )
                                 .map((el) => (
                                     <ProductCard  el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
                                 ))}
@@ -112,7 +112,7 @@ const Products = () => {
 
                         <section className={isDisplay ? "monitorProducts show" : "monitorProducts"}>
                             {products.items
-                                .filter(el => el.product_category === "Monitor")
+                                .filter(el => el.product_category === "Monitor" && el.popular === true)
                                 .map(el => (
                                     <ProductCard el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
                                 ))
@@ -121,7 +121,7 @@ const Products = () => {
 
                         <section className={isDisplay2 ? "head-seatProducts show" : "head-seatProducts"}>
                             {products.items
-                                .filter(el => el.product_category === "Head-Set")
+                                .filter(el => el.product_category === "Head-Set" && el.popular === true)
                                 .map(el => (
                                      <ProductCard el={el} addToBasket={addToBasket} addLikedProduct={addLikedProduct}/>
                                 ))

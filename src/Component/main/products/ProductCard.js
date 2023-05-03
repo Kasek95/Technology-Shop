@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from "react";
+import {Link} from "react-router-dom";
 
 const ProductCard = ({el,addLikedProduct,addToBasket}) => {
 
@@ -15,7 +16,10 @@ const ProductCard = ({el,addLikedProduct,addToBasket}) => {
                 </div>
                 <h3>{el.products_name}</h3>
                 <span>Price: {el.products_price}$</span>
-                <button onClick={()=> addToBasket(el.id)}>Add to Basket</button>
+                <div className={"action"}>
+                    <button className={"btn"} onClick={()=> addToBasket(el.id)}>Add to Basket</button>
+                    <Link className={"btn"} to={`/products/${el.id}`}>Check</Link>
+                </div>
             </div>
         </>
     )

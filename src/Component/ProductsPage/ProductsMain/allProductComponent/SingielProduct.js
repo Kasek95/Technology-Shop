@@ -1,11 +1,14 @@
 import React, {useState} from "react";
 import supabase from "../../../../supabase";
+import {useDispatch} from "react-redux";
+import {updateItemNumber} from "../../../../features/listOfProduct";
+import {Link} from "react-router-dom";
 
 const SingielProduct = ({product,getProducts,likedProducts}) => {
     const [counter,setCounter] = useState(1)
-
+    const dispatch = useDispatch()
     const addToBasket = async (product) => {
-
+        dispatch(updateItemNumber({id: product.id, counter}))
 
         const {data, error} = await supabase
             .from("products")
@@ -28,7 +31,6 @@ const SingielProduct = ({product,getProducts,likedProducts}) => {
                     <span>Price: <strong>{product.products_price}$</strong> </span>
                     <img src={product.products_img} alt={product.products_name}/>
                 </div>
-                <span>{product.products_info}</span>
             </div>
             <article className={"OrderBox"}>
                 <div className={"inputBox"}>
@@ -38,6 +40,7 @@ const SingielProduct = ({product,getProducts,likedProducts}) => {
                 </div>
                 <button onClick={() => addToBasket(product)} className={"addToBasket"}>Add To Basket</button>
             </article>
+            <Link className={"check"} to={`/products/${product.id}`}>Check</Link>
         </section>
     )
 }

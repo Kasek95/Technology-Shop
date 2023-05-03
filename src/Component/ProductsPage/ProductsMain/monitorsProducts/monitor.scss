@@ -3,8 +3,13 @@
 
 .productCard {
    position: relative;
-   margin: $ten $Tweenty;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: $ten 0.25rem;
   background:  #020223;
+   width: 400px;
+   height: 450px;
    z-index: 3;
    color:$colorWhite;
 
@@ -24,7 +29,7 @@
      display: flex;
      align-items: start;
      justify-content: space-between;
-      width: $one-hundred-percent;
+
 
         @media (max-width: $seven-hundred-sixty-eight) {
            flex-direction: column;
@@ -80,10 +85,12 @@
   .OrderBox {
     display: flex;
     gap: $thirty;
-    margin:$thirty;
+    margin-top: $ten;
+    margin-bottom: $ten;
      .inputBox {
        position: relative;
        display: flex;
+
        .decrease {
          position: absolute;
          left: -$nine-ten;
@@ -137,6 +144,22 @@
       width: $one-hundred-thirty;
       height: $forty;
     }
+  }
+  .check {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    border: 1px solid $colorWhite;
+    border-top-left-radius: $thirty;
+    border-bottom-right-radius: $thirty;
+    color: $colorWhite;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 }
 

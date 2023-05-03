@@ -8,11 +8,11 @@
   width: $one-hundred-percent;
   min-height: 100vh;
   background: $backGrandColor;
+  padding: 5px;
    .allProducts {
      display: flex;
-     height: $seven-hundred;
-     border: 1px solid $colorWhite;
-      @media (max-width: $seven-hundred-sixty-eight) {
+     height: $one-thousand-tweenty-five;
+     @media (max-width: $seven-hundred-sixty-eight) {
         flex-direction: column;
       }
      .categoryOfProducts {
@@ -20,14 +20,12 @@
         flex-direction: column;
         padding-top: $thirty;
         width: 20%;
-        border-right: 1px solid $colorWhite;
-        height: $one-hundred-percent;
+       height: $one-hundred-percent;
        @media (max-width: $seven-hundred-sixty-eight) {
          align-items: center;
          justify-content: center;
          flex-direction: unset;
          border-right: unset;
-         border-bottom: 1px solid $colorWhite;
          height: $seventy;
          width: $one-hundred-percent;
        }
@@ -85,23 +83,28 @@
          height: $one-hundred-percent;
            .allCategorys {
              display: flex;
-             flex-direction: column;
+             flex-wrap: wrap;
+             justify-content: space-around;
              overflow-x: auto;
            }
            .singielCategoryMonitor {
              display: flex;
-             flex-direction: column;
+             flex-wrap: wrap;
+             justify-content: space-around;
              overflow-x: auto;
 
            }
           .singielCategoryHead-Set {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
             overflow-x: auto;
           }
           .singielCategoryPhone {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-around;
             overflow-x: auto;
           }
          .hide {

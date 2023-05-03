@@ -91,17 +91,26 @@
     margin-top: 10px;
     font-weight: bold;
   }
+   .action {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     .btn {
+       display: flex;
+       margin: 10px auto;
+       border: 1px solid white;
+       border-radius: 40px;
+       background: linear-gradient(to right, #8e2de2, #4a00e0);
+       color: white;
+       padding: 10px;
+       text-transform: uppercase;
+     }
+     a {
+       text-decoration: none;
+     }
+   }
 
-  button {
-    display: flex;
-    margin: 10px auto;
-    border: 1px solid white;
-    border-radius: 40px;
-    background: linear-gradient(to right, #8e2de2, #4a00e0);
-    color: white;
-    padding: 10px;
-    text-transform: uppercase;
-  }
+
 }
 
 

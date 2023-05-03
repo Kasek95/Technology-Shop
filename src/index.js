@@ -4,10 +4,12 @@ import App from './App';
 import UserPage from "./Component/userPage/UserPage";
 import ProductsPage from "./Component/ProductsPage/ProductsPage";
 import Header from "./Component/header/Header";
+import SingielProduct from "./Component/SingielProductPage/SingielProduct";
 import {configureStore} from "@reduxjs/toolkit";
 import {Provider} from "react-redux";
 import userReducer from "./features/user"
 import productReducer from "./features/listOfProduct"
+import opinionReducer from "./features/opinions"
 import {
     createBrowserRouter,
     RouterProvider,
@@ -17,6 +19,7 @@ const store = configureStore({
     reducer: {
         user: userReducer,
         product: productReducer,
+        opinions: opinionReducer,
     }
 })
 
@@ -35,7 +38,12 @@ const router = createBrowserRouter([
             {
                 path: "/products",
                 element: <ProductsPage/>
-            }]
+            },
+            {
+               path: "/products/:productId",
+               element: <SingielProduct/>
+            }
+            ]
     }
 ])
 

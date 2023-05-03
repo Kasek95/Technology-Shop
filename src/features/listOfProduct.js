@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-let increse;
+
 export const productSlice = createSlice({
     name: "product",
     initialState: {value : {items: []}},
@@ -32,9 +32,11 @@ export const productSlice = createSlice({
             state.value.items[idx].product_qty = state.value.items[idx].product_qty === 1 ? 1 : state.value.items[idx].product_qty - 1
         },
         updateItemNumber: (state, action) => {
-            const idx = state.value.items.findIndex(el => el.id === action.payload)
+
+            const idx = state.value.items.findIndex(el => el.id === action.payload.id)
             state.value.items[idx].inShop = true
-            state.value.items[idx].product_qty = state.value.items[idx].product_qty + action.payload[1]
+            state.value.items[idx].product_qty = state.value.items[idx].product_qty + action.payload.counter
+
         }
 
     }

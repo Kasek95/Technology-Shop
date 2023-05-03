@@ -24,7 +24,7 @@ const SearchBar = ({search,products}) => {
                              }
                          }).map(product=>
 
-                             search === "" ? null : <Link to={`/products?type=${product.product_category}`} key={product.id} className={"list-item"} onClick={() => handleClick(product.product_category)}>
+                             search === "" ? null : <Link to={`/products/${product.id}`} key={product.id} className={"list-item"} onClick={() => handleClick(product.product_category)}>
                                  <span>{product.products_name}</span>
                                  <img src={product.products_img}/>
                              </Link>

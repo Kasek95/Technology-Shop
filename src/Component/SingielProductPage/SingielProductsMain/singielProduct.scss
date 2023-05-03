@@ -1,0 +1,372 @@
+@import "../../sass/colors";
+@import "../../sass/pixel";
+.singielProduct-Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $one-hundred-percent;
+  height: 100%;
+  padding: $ten;
+   .singielProductContainer {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     min-height: $one-thousand-tweenty-five;
+     border: $five solid #212121;
+     border-radius: $ten;
+     margin: $one-hundred 0;
+     padding: $Tweenty;
+      .icon {
+        position: absolute;
+        top: $ten;
+        right: $ten;
+        font-size: 1.5rem;
+      }
+     h2 {
+       margin-bottom: $Tweenty;
+     }
+     h3 {
+       margin-bottom: $ten;
+     }
+     .rate {
+       span {
+         display: flex;
+         align-items: center;
+         gap: $five;
+         margin-bottom: $five;
+          i {
+            color: gold;
+          }
+       }
+       p {
+         margin-bottom: $five;
+       }
+     }
+      .description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: $ten;
+         @media (max-width: 768px){
+           flex-direction: column;
+         }
+        img {
+          max-width: 300px;
+          max-height: 300px;
+          object-fit: contain;
+        }
+         span {
+           align-self: start;
+           max-width: 500px;
+           max-height: 200px;
+           overflow: auto;
+           @media (max-width: 768px){
+             align-self: center;
+           }
+         }
+      }
+     .OrderBox {
+       display: flex;
+       align-items: center;
+       gap: $thirty;
+       margin-top: $ten;
+       margin-bottom: $ten;
+       margin-left: $ten;
+       .inputBox {
+         position: relative;
+         display: flex;
+
+         .decrease {
+           position: absolute;
+           left: -$nine-ten;
+           outline: none;
+           background: $backGrandColor;
+           border: 1px solid $borderInShopLikedProducts;
+           border-top-left-radius: $thirty;
+           border-bottom-left-radius: $thirty;
+           color: $colorWhite;
+           height: $forty;
+           width: $Tweenty;
+         }
+         .increase {
+           position: absolute;
+           right: -$nine-ten;
+           outline: none;
+           background: $backGrandColor;
+           border: 1px solid $borderInShopLikedProducts;
+           border-left: unset;
+           border-top-right-radius: $thirty;
+           border-bottom-right-radius: $thirty;
+           color: $colorWhite;
+           height: $forty;
+           width: $Tweenty;
+         }
+         input {
+           border-top: 1px solid $borderInShopLikedProducts;
+           border-bottom: 1px solid $borderInShopLikedProducts;
+           background: $backGrandColor;
+           color: $colorWhite;
+           outline: none;
+           text-align: center;
+           width: $thirty;
+           height: $forty;
+         }
+         input[type="number"]::-webkit-inner-spin-button {
+           display: none;
+         }
+
+       }
+       .addToBasket{
+         color: $colorWhite;
+         outline: none;
+         border: 1px solid $colorWhite;
+         background: $backGrandColor;
+         border-top-left-radius: $thirty;
+         border-bottom-right-radius: $thirty;
+         font-weight: bold;
+         text-transform: uppercase;
+         margin-left: $ten;
+         width: $one-hundred-thirty;
+         height: $forty;
+       }
+     }
+     .opinion {
+       margin-bottom: $Tweenty;
+        .opinionList {
+          max-height: $three-hundred;
+          overflow-x: auto;
+          .opinionContainer {
+
+            max-width: 100%;
+            margin-bottom: $Tweenty;
+            border: 1px solid grey;
+            border-radius: $ten;
+            padding: $ten;
+            .rating {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: $ten;
+               span {
+                 display: flex;
+                 justify-content: center;
+                 gap: $ten;
+                  i {
+                    color: gold;
+                  }
+               }
+            }
+            p {
+              margin: $ten 0;
+            }
+          }
+        }
+       .addOpinionForm {
+         position: absolute;
+         display: none;
+         justify-content: center;
+         align-items: center;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0,0,0, 0.5);
+         padding: $five;
+         z-index: 100;
+         .form {
+           position: relative;
+           display: flex;
+           justify-content: center;
+           flex-direction: column;
+           align-items: center;
+           width: $five-hundred;
+           background-color: $colorWhite;
+           height: $five-hundred;
+           border-radius: $forty;
+           animation: show 3s ease ;
+            .closeForm {
+              position: absolute;
+              top: $ten;
+              right: $Tweenty;
+              padding: 3px;
+              border-radius: 50%;
+              background: none;
+              border: 1px solid $black;
+            }
+           .input {
+             position: relative;
+             display: flex;
+             flex-direction: column;
+             margin-bottom: $Tweenty;
+             label {
+                margin-bottom: $five;
+             }
+              input {
+                min-width: $two-hundred-eighty;
+                padding: $five 0 $five $ten;
+              }
+           }
+           .textArea {
+             position: relative;
+             display: flex;
+             flex-direction: column;
+             margin-bottom: $Tweenty;
+              label {
+                margin-bottom: $five;
+              }
+              textarea {
+                padding: $ten;
+                min-width: $two-hundred-eighty;
+                resize: none;
+              }
+           }
+           .select {
+             position: relative;
+             display: flex;
+             flex-direction: column;
+              .selectBox {
+                min-width: $two-hundred-eighty;
+              }
+              label {
+                margin-bottom: $five;
+              }
+           }
+           .add {
+             margin-top: $Tweenty;
+             padding: $ten;
+             background: $backGrandColor;
+             border: 1px solid $colorWhite;
+             border-radius: $forty;
+             color: $colorWhite;
+           }
+         }
+       }
+       .show {
+         display: flex;
+       }
+       .addOpinion {
+         padding: $ten;
+         background: $backGrandColor;
+         border: 1px solid $colorWhite;
+         border-radius: $forty;
+         color: $colorWhite;
+         margin-top: $Tweenty;
+       }
+     }
+     .otherProducts {
+       width: $one-hundred-percent;
+       .sliderCarousel {
+         overflow: hidden;
+         height: 300px;
+         .slider {
+           .productContainer {
+             position: relative;
+             .imgContainer {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               background: $cardBackGround;
+               height: $two-hundred;
+                   img {
+                     width: 150px;
+                     height: 150px;
+                     object-fit: contain;
+                   }
+                }
+                .Info {
+                  display: flex;
+                  justify-content: space-between;
+                  height: $fifty;
+                  align-items: center;
+                  margin: $ten $ten;
+                  h3 {
+                    margin-bottom: unset;
+                  }
+
+                   a {
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     background: $backGrandColor;
+                     border-radius: 30px;
+                     padding: $five;
+                     text-transform: uppercase;
+                     text-decoration: none;
+                     color: $colorWhite;
+                     height: $Tweenty;
+                   }
+                }
+              }
+           }
+       }
+     }
+
+
+
+     .linkAction {
+       position: absolute;
+       display: flex;
+       gap: $ten;
+       bottom:$five;
+       right: $Tweenty;
+        .link {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $colorWhite;
+          padding: $ten;
+          border-radius: $thirty;
+          background: $backGrandColor;
+        }
+     }
+     .red {
+       color: red;
+     }
+   }
+}
+
+
+.slide {
+  position: relative;
+  width: $one-hundred-percent;
+  height: $two-hundred-thirty;
+
+
+
+  .slick-track {
+    display: flex;
+    gap: $Tweenty;
+    padding: $five;
+  }
+  .slick-next {
+
+    position: absolute;
+    top: -$one-hundred;
+    right: $Tweenty;
+    background-color: black;
+    border-radius: $five;
+    padding: 2px;
+    color: $colorWhite;
+
+  }
+  .slick-prev {
+
+    position: absolute;
+    top: -$one-hundred;
+    right: 70px;
+    background-color: $black;
+    color:$colorWhite;
+    border-radius: $five;
+    padding: 2px;
+    outline: none;
+  }
+
+}
+
+@keyframes show {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
