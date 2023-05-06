@@ -21,6 +21,7 @@
         padding-top: $thirty;
         width: 20%;
        height: $one-hundred-percent;
+       z-index: 1;
        @media (max-width: $seven-hundred-sixty-eight) {
          align-items: center;
          justify-content: center;

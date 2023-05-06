@@ -100,7 +100,7 @@ const RegistrationForm = ({setIsDisplay}) => {
 
                         <div className={"btnPanel"}>
                             <button className={"btn"}  type={"submit"}>Register</button>
-                            <button onClick={e => setIsDisplay(false)} className={"btn"}>Back to Login</button>
+                            <button type={"reset"} onClick={e => setIsDisplay(false)} className={"btn"}>Back to Login</button>
                         </div>
                     </Form>
                 )}
