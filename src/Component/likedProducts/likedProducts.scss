@@ -46,7 +46,7 @@
      margin-top: $ten;
      gap: $ten;
      width: $one-hundred-percent;
-     height: $eight-hundred-eighty;
+     max-height: $eight-hundred-eighty;
      .singielItem {
        position: relative;
        border: 1px solid $borderInShopLikedProducts;
