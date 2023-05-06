@@ -46,6 +46,7 @@
        bottom: 0;
        left: 0;
        width: $one-hundred-percent;
+       z-index: 1000;
        .totalPrice {
          display: flex;
          flex-direction: column;
