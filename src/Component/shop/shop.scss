@@ -120,6 +120,7 @@
               .decrease {
                 position: absolute;
                 left: -1.2rem;
+                top: 0;
                 outline: none;
                 background: $backGrandColor;
                 border: 1px solid $borderInShopLikedProducts;
@@ -131,6 +132,8 @@
               }
              .increase {
                position: absolute;
+               top: 0;
+               right: -$Tweenty;
                outline: none;
                  background: $backGrandColor;
                  border: 1px solid $borderInShopLikedProducts;
