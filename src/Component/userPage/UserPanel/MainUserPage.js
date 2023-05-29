@@ -11,7 +11,7 @@ const MainUserPage = () => {
     return (
         <>
            <main className={"mainRegistrationLogin"}>
-               {user.user === null ? <FormContainer /> : <Panel />}
+               {user.user ? <Panel/> : <FormContainer/>}
            </main>
         </>
     )

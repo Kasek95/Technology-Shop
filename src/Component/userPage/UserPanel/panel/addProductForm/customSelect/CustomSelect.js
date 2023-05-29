@@ -6,11 +6,12 @@ const CustomSelect = ({ label, ...props }) => {
 
     return (
         <>
-            <label>{label}</label>
+            <label htmlFor={props.name}>{label}</label>
             <select
                 {...field}
                 {...props}
                 className={"selectBox"}
+                id={props.name}
             />
             {meta.touched && meta.error && <div className="error">{meta.error}</div>}
         </>

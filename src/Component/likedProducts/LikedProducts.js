@@ -14,7 +14,7 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, getProducts}) => {
          dispatch(updateIsLiked(id))
          let x = product.items.find(el => el.id == id)
          let liked = !x.isLiked
-         const {data,error} = await supabase.from("products")
+        await supabase.from("products")
             .update({
                 isLiked: liked
             })

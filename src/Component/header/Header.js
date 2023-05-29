@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, Outlet, useParams} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 import Shop from "../shop/Shop";
 import LikedProducts from "../likedProducts/LikedProducts";
 import SearchBar from "./searchBarFilter/SearchBar";
@@ -20,7 +20,6 @@ const Header = () => {
     const setSearch = () => {
         setSearchProducts("")
     }
-
 
     useEffect(() => {
         getProducts();

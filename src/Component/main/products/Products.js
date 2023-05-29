@@ -18,13 +18,6 @@ const Products = () => {
     const dispatch = useDispatch()
     const products = useSelector((state)=>state.product.value)
 
-
-
-
-
-
-
-
     const showMonitorOnly = () => {
         setIsDisplay(!isDisplay)
         setIsDisplay2(false)
@@ -56,7 +49,7 @@ const Products = () => {
         let product = products.items.find(el => el.id === id)
         let liked = product.isLiked
 
-        const {data,error} = await supabase.from("products")
+        await supabase.from("products")
             .update({
                 isLiked: !liked
             })
@@ -66,7 +59,7 @@ const Products = () => {
     const addToBasket = async (id) => {
         dispatch(updateInShop(id))
         let product = products.items.find(el => el.id === id)
-        const {data, error}= await supabase
+        await supabase
               .from("products")
               .update({
                   inShop: true,

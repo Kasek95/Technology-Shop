@@ -36,7 +36,7 @@ const HeadSetCard = ({product,likedProducts,getProducts}) => {
                 </div>
                 <article className={"OrderBox"}>
                     <div className={"inputBox"}>
-                        <button disabled={counter === 1 ? true : false} onClick={()=>setCounter(prevCounter => prevCounter - 1)}  className={"decrease"}><i className="fa-solid fa-minus"></i></button>
+                        <button disabled={counter === 1} onClick={()=>setCounter(prevCounter => prevCounter - 1)}  className={"decrease"}><i className="fa-solid fa-minus"></i></button>
                         <input  value={counter} type="number"/>
                         <button onClick={()=> setCounter(prevCounter => prevCounter + 1)} className={"increase"}><i className="fa-solid fa-plus"></i></button>
                     </div>

@@ -15,7 +15,7 @@ const ProductsMain = () => {
     const [showMonitors,setShowMonitors] = useState(false);
     const [showPhones,setShowPhones] = useState(false);
     const [showHeadSet,setShowHeadSet] = useState(false);
-    (searchParams.get('type'));
+
     const product = useSelector((state)=>state.product.value)
     const dispatch = useDispatch()
 

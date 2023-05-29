@@ -8,7 +8,7 @@ const Phone = ({products,getProducts, likedProducts}) => {
         <>
             {products.items.filter(product => product.product_category === "Phone")
                 .map(product => (
-                    <CardPhone product={product} getProducts={getProducts} likedProducts={likedProducts}/>
+                    <CardPhone  product={product} getProducts={getProducts} likedProducts={likedProducts}/>
                 ))
             }
         </>

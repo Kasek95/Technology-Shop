@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
 
 import Footer from "../footer/Footer";
 import MainUserPage from "./UserPanel/MainUserPage";

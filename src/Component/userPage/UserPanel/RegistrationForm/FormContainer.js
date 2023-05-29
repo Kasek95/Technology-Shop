@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import RegistrationForm from "./RegistrationForm";
 import {useDispatch} from "react-redux";
 import {login} from "../../../../features/user"
-
 import supabase from "../../../../supabase";
 
 
@@ -41,6 +40,7 @@ const  FormContainer  = () => {
                        onChange={e => setEmail(e.target.value)}
                        value={email}
                        type="email"
+                       id={"Email"}
                        required
                        placeholder={"Write your e-mail"}
                    />
@@ -54,6 +54,7 @@ const  FormContainer  = () => {
                        value={password} type="password"
                        required
                        placeholder={"Write your password"}
+                       id={"Password"}
                    />
                </div>
                <button onClick={loginInUser}>Log in</button>

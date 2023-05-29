@@ -25,15 +25,10 @@ const SingielProductMain = ({getProducts,getOpinion}) => {
     const currentDate = new Date()
     const date = `${currentDate.getFullYear()}-${currentDate.getMonth() +1}-${currentDate.getDay()}`
 
-
-
-
-
-
     const likeProducts = async (id)=> {
         dispatch(updateIsLiked(id))
         const findProducts = products.find(el => el.id === id)
-        const {data,error} = await supabase
+        await supabase
             .from("products")
             .update({
                 isLiked: !findProducts.isLiked
@@ -45,7 +40,7 @@ const SingielProductMain = ({getProducts,getOpinion}) => {
     const addToBasket = async (product) => {
         dispatch(updateItemNumber({id: product.id, counter}))
 
-        const {data, error} = await supabase
+        await supabase
             .from("products")
             .update({
                 inShop: true,
@@ -97,7 +92,7 @@ const SingielProductMain = ({getProducts,getOpinion}) => {
                     </div>
                     <article className={"OrderBox"}>
                         <div className={"inputBox"}>
-                            <button disabled={counter === 1 ? true : false} onClick={()=>setCounter(prevCounter => prevCounter - 1)}  className={"decrease"}><i className="fa-solid fa-minus"></i></button>
+                            <button disabled={counter === 1 } onClick={()=>setCounter(prevCounter => prevCounter - 1)}  className={"decrease"}><i className="fa-solid fa-minus"></i></button>
                             <input  value={counter} type="number"/>
                             <button onClick={()=> setCounter(prevCounter => prevCounter + 1)} className={"increase"}><i className="fa-solid fa-plus"></i></button>
                         </div>

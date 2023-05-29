@@ -3,7 +3,6 @@ import "./banner.scss"
 import img1 from "../../assets/banner-img.png"
 
 const Banner = () => {
-
     return (
         <>
             <section className="hero-banner">

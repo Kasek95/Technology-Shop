@@ -10,11 +10,8 @@ import {Provider} from "react-redux";
 import userReducer from "./features/user"
 import productReducer from "./features/listOfProduct"
 import opinionReducer from "./features/opinions"
-import {
-    createBrowserRouter,
-    RouterProvider,
-    Route
-} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
 const store = configureStore({
     reducer: {
         user: userReducer,

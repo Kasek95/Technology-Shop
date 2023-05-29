@@ -3,22 +3,18 @@ import React from "react";
 import payment from "../assets/payments.png"
 
 
+const Footer = () => (
+    <footer>
 
-const Footer = () => {
-
-    return  (
-        <>
-            <footer>
-
-                <section className={"footerContainer container"}>
-                    <article id={"about"} className={"About "}>
-                        <span>About</span>
-                        <p>Voluptatem accusantium doloremque laudantium,
-                            totam rem aperiam, eaque ipsa quae ab illo inventore
-                            veritatis et quasi architecto beatae vitae dicta sunt
-                            explicabo eaque ipsa quae ab illo.</p>
-                    </article>
-                    <article className={"contact"}>
+        <section className={"footerContainer container"}>
+            <article id={"about"} className={"About "}>
+                <span>About</span>
+                <p>Voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore
+                    veritatis et quasi architecto beatae vitae dicta sunt
+                    explicabo eaque ipsa quae ab illo.</p>
+            </article>
+            <article className={"contact"}>
                         <span>Contact</span>
                         <div className={"contact-cont"}>
                             <div className={"place"}>
@@ -55,8 +51,8 @@ const Footer = () => {
                 </article>
 
             </footer>
-        </>
-    )
-}
+
+)
+
 
 export default Footer;
