@@ -146,6 +146,7 @@ const RemoveProduct = ({setIsDisplay}) => {
                         type={"text"}
                         value={editProduct.products_name}
                         name={"ProductsName"}
+                        id={"ProductsName"}
                         onChange={e => setEditProduct({...editProduct, products_name: e.target.value})}
                     />
                 </div>
@@ -153,6 +154,7 @@ const RemoveProduct = ({setIsDisplay}) => {
                     <label htmlFor={"ProductsPrice"}>Product Price</label>
                     <input
                         type={"number"}
+                        id={"ProductsPrice"}
                         value={editProduct.products_price}
                         name={"ProductsPrice"}
                         onChange={e => setEditProduct({...editProduct, products_price: e.target.value})}
@@ -163,6 +165,7 @@ const RemoveProduct = ({setIsDisplay}) => {
                     <label htmlFor={"ProductsYear"}>Product Year</label>
                     <input
                         type={"number"}
+                        id={"ProductsYear"}
                         value={editProduct.products_year}
                         name={"ProductsYear"}
                         onChange={e => setEditProduct({...editProduct, products_year: e.target.value})}
@@ -173,7 +176,7 @@ const RemoveProduct = ({setIsDisplay}) => {
                     <label htmlFor={"ProductsInfo"}>Product Info</label>
                     <textarea
                         rows={6}
-                        type={"text"}
+                        id={"ProductsInfo"}
                         value={editProduct.products_info}
                         name={"ProductsInfo"}
                         onChange={e => setEditProduct({...editProduct, products_info: e.target.value})}
@@ -182,7 +185,7 @@ const RemoveProduct = ({setIsDisplay}) => {
 
                 <div className={"customInput"}>
                     <label htmlFor={"ProductsImg"}>Product IMG</label>
-                    <input onChange={fileSelectedHandler} type={"file"}  name={"ProductsImg"}/>
+                    <input id={"ProductsImg"} onChange={fileSelectedHandler} type={"file"}  name={"ProductsImg"}/>
                 </div>
 
                 <div className={"customSelect"}>
