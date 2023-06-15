@@ -17,7 +17,7 @@ const SingielProduct = () => {
     }, [])
 
     async function getProducts() {
-        const { data } = await supabase.from("products").select();
+        const { data } = await supabase.from("products").select().sort((a,b)=> a.id - b.id);
         dispatch(getAllProducts({items:data}))
     }
 

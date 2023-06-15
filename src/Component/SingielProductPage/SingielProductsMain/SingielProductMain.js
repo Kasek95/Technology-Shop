@@ -34,6 +34,7 @@ const SingielProductMain = ({getProducts,getOpinion}) => {
                 isLiked: !findProducts.isLiked
             })
             .eq("id",id)
+            .sort()
 
         getProducts()
     }
@@ -47,6 +48,7 @@ const SingielProductMain = ({getProducts,getOpinion}) => {
                 product_qty: product.product_qty + counter
             })
             .eq("id", product.id)
+            
         getProducts()
         setCounter(1)
     }

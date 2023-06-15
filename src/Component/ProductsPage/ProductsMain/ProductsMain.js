@@ -73,7 +73,7 @@ const ProductsMain = () => {
     }, []);
 
     async function getProducts() {
-        const { data } = await supabase.from("products").select();
+        const { data } = await supabase.from("products").select().sort();
         dispatch(getAllProducts({items:data}))
 
     }
@@ -87,6 +87,7 @@ const ProductsMain = () => {
                 isLiked: !findProducts.isLiked
                 })
             .eq("id",id)
+            .sort()
 
         getProducts()
     }

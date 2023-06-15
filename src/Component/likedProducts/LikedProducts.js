@@ -19,6 +19,7 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, getProducts}) => {
                 isLiked: liked
             })
             .eq("id", id)
+            .sort()
         getProducts()
     }
 
@@ -32,6 +33,7 @@ const LikedProducts = ({isDisplay2,setIsDisplay2, getProducts}) => {
                 product_qty: x.product_qty + 1
             })
             .eq("id", id)
+            
         getProducts()
     }
 

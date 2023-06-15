@@ -54,6 +54,7 @@ const Products = () => {
                 isLiked: !liked
             })
             .eq("id", id)
+            .sort()
             getProducts()
     }
     const addToBasket = async (id) => {
@@ -66,6 +67,7 @@ const Products = () => {
                   product_qty:  (product.product_qty + 1)
               })
               .eq("id", id)
+              .sort()
         getProducts();
     }
 

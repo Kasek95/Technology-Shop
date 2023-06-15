@@ -26,7 +26,7 @@ const Header = () => {
     }, []);
 
     async function getProducts() {
-        const { data } = await supabase.from("products").select();
+        const { data } = await supabase.from("products").select().sort();
         dispatch(getAllProducts({items:data}))
     }
     const closeShop = (item) => {
